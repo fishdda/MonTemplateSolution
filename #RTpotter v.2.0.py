@@ -35,7 +35,7 @@ import os
 # OutputFileName = 'D:/'+pt_id+'_'+CountourSequenceName+'.stl'
 InputFileName = "C:/Users/xhuae08006/OneDrive - Elekta/Desktop/demo/geometry exploration/C-shape target/000-007_StrctrSets.dcm"
 CountourSequenceName = "OuterTarget"
-OutputFileName = "C:/Users/xhuae08006/OneDrive - Elekta/Desktop/demo/geometry exploration/C-shape target/OuterTarget.stl"
+OutputFileName = "C:/Users/xhuae08006/OneDrive - Elekta/Desktop/demo/geometry exploration/C-shape target/OutTarget.stl"
 
 
 #start with importing pydicom library - it will be used for reading specific content from the DICOM file
