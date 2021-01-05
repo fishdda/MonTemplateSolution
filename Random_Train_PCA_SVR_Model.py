@@ -13,8 +13,9 @@ import os
 import numpy as np
 import pandas as pd
 
-DVH_DTH_data_path = "E:\\demo\\NBIA_Head_Neck_DATA\\" 
-strt_name         = "BrainStem"
+DVH_DTH_data_path = "D:\\demo\\NBIA_Head_Neck_DATA\\" 
+# strt_name         = "BrainStem"
+strt_name         = "GTV"
 
 ## multi-output version of Support Vector Regression
 #epsilon           = 0.06
@@ -27,7 +28,7 @@ epsilon_4         = np.arange(0,1,0.01)
 epsilon_5         = np.arange(0,1,0.01)
 ML_Model = PCA_SVR_Model(DVH_DTH_data_path,strt_name)
 
-ML_Model.PCA_Compression(num_components=5,wplt=False,DVH_file_name="DVH_"+strt_name+"_Clean.csv",DTH_file_name="DTH_"+strt_name+"_Clean.csv")
+ML_Model.PCA_Compression(num_components=5,wplt=False,DVH_file_name="DVH_"+strt_name+"_Clean.csv",DTH_file_name="DTH_"+'BrainStem'+"_Clean.csv")
 
 ML_Model.Training_VS_Validation_Set(rtss_Volume_path=os.path.join(DVH_DTH_data_path,"Volume_Clean_New.csv"),structure_name=strt_name)
 
