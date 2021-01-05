@@ -15,7 +15,7 @@ import pandas as pd
 
 DVH_DTH_data_path = "D:\\demo\\NBIA_Head_Neck_DATA\\" 
 # strt_name         = "BrainStem"
-strt_name         = "GTV"
+strt_name         = "BrainStem"
 
 ## multi-output version of Support Vector Regression
 #epsilon           = 0.06
