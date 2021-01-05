@@ -64,5 +64,5 @@ for item in os.listdir(Input_path):
 ## display GTV DVH to show the prescription dose.
 import pandas as pd
 
-GTV_DVH = pd.read_csv("D:\demo\NBIA_Head_Neck_DATA")
+GTV_DVH = pd.read_csv("D:\\demo\\NBIA_Head_Neck_DATA\\DVH_GTV_Clean.csv")
 

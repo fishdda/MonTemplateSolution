@@ -15,7 +15,11 @@ import pandas as pd
 
 DVH_DTH_data_path = "E:\\demo\\NBIA_Head_Neck_DATA\\" 
 strt_name         = "BrainStem"
+
+## multi-output version of Support Vector Regression
 #epsilon           = 0.06
+
+## single-output version of Support Vector Regression 
 epsilon_1         = np.arange(0,1,0.01)
 epsilon_2         = np.arange(0,1,0.01)
 epsilon_3         = np.arange(0,1,0.01)
