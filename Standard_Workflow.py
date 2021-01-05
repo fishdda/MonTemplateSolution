@@ -61,3 +61,8 @@ for item in os.listdir(Input_path):
         CountourSequenceName = kk[item.split(".")[0]]
         Y.RTSS_DCM_TO_MESH(InputFileName,CountourSequenceName,OutputFileName)
 
+## display GTV DVH to show the prescription dose.
+import pandas as pd
+
+GTV_DVH = pd.read_csv("D:\demo\NBIA_Head_Neck_DATA")
+
