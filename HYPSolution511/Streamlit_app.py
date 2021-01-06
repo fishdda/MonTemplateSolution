@@ -27,6 +27,16 @@ if uploaded_file2:
 
 ## Parameters need be entered by users
 
+# Prescription Checking
+st.header('Dose Prescription Setting')
+
+num_fx = st.number_input('number of fractions:')
+st.write('The current number is ',num_fx)
+
+fx_dose = st.number_input('Dose per fraction:(Gy)')
+st.write('The current number is ',fx_dose)
+
+
 # dose calculation settings
 st.header('Dose Calculation Setting')
 
@@ -91,8 +101,6 @@ if st.button('Start Intelligently Generating a Monaco Template'):
         time.sleep(0.1)
 
     '...and now we\'re done!(Please Check C:\FocalData\Installation\MonacoTemplate\)'
-
-
 
 
 ## download the Plan Template from Cloud
