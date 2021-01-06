@@ -73,7 +73,7 @@
       </DoseSurfaceParametersList>
       <DoseStructureParametersList>
         <DoseStructureParameter>
-          <StructureName>T.Lobe R</StructureName>
+          <StructureName>Parotid L</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
@@ -82,8 +82,56 @@
           <DoseGoalList>
             <DoseGoal>
               <GoalType>7</GoalType>
-              <Dose>5200.0</Dose>
-              <Volume>3</Volume>
+              <Dose>2800.0</Dose>
+              <Volume>50</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Lung</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>1000.0</Dose>
+              <Volume>20</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Larynx</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>3200.0</Dose>
+              <Volume>50</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>A.D L</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>3800.0</Dose>
+              <Volume>50</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>
@@ -100,6 +148,118 @@
               <GoalType>7</GoalType>
               <Dose>4200.0</Dose>
               <Volume>1</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PGTVnx</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>9</GoalType>
+              <Dose>6160.0</Dose>
+              <Volume>95.0</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Spinal Cord</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>8</GoalType>
+              <Dose>3500.0</Dose>
+              <Volume>100.0</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Optical Nerve L</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>4000.0</Dose>
+              <Volume>1</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Oral Cavity</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>3200.0</Dose>
+              <Volume>50</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PCTV</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>9</GoalType>
+              <Dose>5040.0</Dose>
+              <Volume>95.0</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Parotid R</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>2800.0</Dose>
+              <Volume>50</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>T.Lobe L</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>5200.0</Dose>
+              <Volume>3</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>
@@ -127,54 +287,6 @@
           </DoseGoalList>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Eye R</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>1500.0</Dose>
-              <Volume>30</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Pituitary</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>4000.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Parotid L</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>2800.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
           <StructureName>A.D R</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
@@ -185,86 +297,6 @@
             <DoseGoal>
               <GoalType>7</GoalType>
               <Dose>3800.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Parotid R</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>2800.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Spinal Cord</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>8</GoalType>
-              <Dose>3500.0</Dose>
-              <Volume>100.0</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Brain Stem</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>8</GoalType>
-              <Dose>4200.0</Dose>
-              <Volume>100.0</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>PGTVnx</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>9</GoalType>
-              <Dose>6160.0</Dose>
-              <Volume>95.0</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Oral Cavity</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>3200.0</Dose>
               <Volume>50</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
@@ -287,7 +319,7 @@
           </DoseGoalList>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Lens R</StructureName>
+          <StructureName>Lens L</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
@@ -298,22 +330,6 @@
               <GoalType>7</GoalType>
               <Dose>500.0</Dose>
               <Volume>1</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>T.Lobe L</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>5200.0</Dose>
-              <Volume>3</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>
@@ -335,7 +351,7 @@
           </DoseGoalList>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>A.D L</StructureName>
+          <StructureName>Pituitary</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
@@ -344,14 +360,14 @@
           <DoseGoalList>
             <DoseGoal>
               <GoalType>7</GoalType>
-              <Dose>3800.0</Dose>
+              <Dose>4000.0</Dose>
               <Volume>50</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Brain</StructureName>
+          <StructureName>T.Lobe R</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
@@ -360,120 +376,8 @@
           <DoseGoalList>
             <DoseGoal>
               <GoalType>7</GoalType>
-              <Dose>3500.0</Dose>
-              <Volume>5</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Eye L</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>1500.0</Dose>
-              <Volume>30</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>PCTV</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>9</GoalType>
-              <Dose>5040.0</Dose>
-              <Volume>95.0</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>PGTVnd</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>9</GoalType>
-              <Dose>5936.0</Dose>
-              <Volume>95.0</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Larynx</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>3200.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Lung</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>1000.0</Dose>
-              <Volume>20</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>T.Joint R</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>4200.0</Dose>
-              <Volume>50</Volume>
-              <Tolerance>0</Tolerance>
-            </DoseGoal>
-          </DoseGoalList>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>Lens L</StructureName>
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-          <RefDoseList/>
-          <DoseGoalList>
-            <DoseGoal>
-              <GoalType>7</GoalType>
-              <Dose>500.0</Dose>
-              <Volume>1</Volume>
+              <Dose>5200.0</Dose>
+              <Volume>3</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>
@@ -495,7 +399,7 @@
           </DoseGoalList>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Optical Nerve L</StructureName>
+          <StructureName>T.Joint R</StructureName>
           <Enabled>-1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
@@ -504,8 +408,104 @@
           <DoseGoalList>
             <DoseGoal>
               <GoalType>7</GoalType>
-              <Dose>4000.0</Dose>
+              <Dose>4200.0</Dose>
+              <Volume>50</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Eye R</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>1500.0</Dose>
+              <Volume>30</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Brain Stem</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>8</GoalType>
+              <Dose>4200.0</Dose>
+              <Volume>100.0</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Eye L</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>1500.0</Dose>
+              <Volume>30</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Brain</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>3500.0</Dose>
+              <Volume>5</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Lens R</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>7</GoalType>
+              <Dose>500.0</Dose>
               <Volume>1</Volume>
+              <Tolerance>0</Tolerance>
+            </DoseGoal>
+          </DoseGoalList>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PGTVnd</StructureName>
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+          <RefDoseList/>
+          <DoseGoalList>
+            <DoseGoal>
+              <GoalType>9</GoalType>
+              <Dose>5936.0</Dose>
+              <Volume>95.0</Volume>
               <Tolerance>0</Tolerance>
             </DoseGoal>
           </DoseGoalList>

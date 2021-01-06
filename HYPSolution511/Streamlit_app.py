@@ -6,7 +6,7 @@ import os
 
 
 ## Set a project title
-st.title('Monaco IntelliTemplate V511')
+st.title('Monaco IntelliTemplate V511 (Constrained Mode)')
 
 
 

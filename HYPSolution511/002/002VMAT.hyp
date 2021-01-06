@@ -259,7 +259,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -284,7 +284,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=6.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -644,7 +644,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -699,7 +699,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -874,7 +874,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1015,7 +1015,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1070,7 +1070,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1210,7 +1210,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1235,7 +1235,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=6.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1260,7 +1260,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=9.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1285,7 +1285,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=12.0
+        shrinkmargin=0.0
         alpha=0
         beta_alpha=0
         celldensity=0
@@ -1328,11 +1328,11 @@
         collimator=0
     !END
 !END
-!FRACTIONS    28.0
-!PRESCRIPTION    61.60000000000001
+!FRACTIONS    0.0
+!PRESCRIPTION    0.0
 !MINHOUNSFIELDINVOI    -200
 !MINDENSINVOI    1
-!DOSEGRIDSIZE    3.0
+!DOSEGRIDSIZE    0.0
 !MINFIELDSIZE    200
 !MINAREADIFFERENCE    0
 !GRADEOFSMOOTHING    Low
