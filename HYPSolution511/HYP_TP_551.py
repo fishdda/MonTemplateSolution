@@ -5,8 +5,8 @@ Created on Tue Jan 14 11:42:10 2020
 @author: Henry Huang in Elekta Shanghai Co. Ltd.
 """
        
-#from GT_MONACO511_20200302 import HYP_Editor_MONACO511
-from GT_MONACO_20200312 import Initialization_MON551
+from GT_MONACO511_20200302 import HYP_Editor_MONACO511
+# from GT_MONACO_20200312 import Initialization_MON551
 import os
 ###############################################################################
 #################################   GUI   #####################################
@@ -32,7 +32,7 @@ PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
 
 for pt_id in pt_id_list:
     for delivery_method in delivery_method_list:
-        X = Initialization_MON551(pt_id,
+        X = HYP_Editor_MONACO511(pt_id,
                        delivery_method,
                        fx,
                        prep_dose,
