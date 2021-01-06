@@ -1,5 +1,5 @@
 # Part1
-000610b6
+000310b6
 !LAYERING
     PGTVprn:T
     PGTVnx:T
@@ -46,20 +46,20 @@
 !MOD_EQUIPMENT
     minMU=4
     targetDoseRate=3.3333333333333335
-    size=10x3
+    size=10x2
 !END
 
 # Part4_VMAT
 !BEAMS
     !BEAMDEF
-        description=1
+        description=G1
         primary=e1
         secondary=e2
         conformalRT=0
         dynamiccollimators=1
         hadron=0
         arc=360
-        arcincrement=30
+        arcincrement=20
         gantry=180
         couch=0
         collimator=0
@@ -188,24 +188,22 @@
 !END
 
 # Part5
-!FRACTIONS    28
-!PRESCRIPTION    61.600000000000001
+!FRACTIONS    33
+!PRESCRIPTION    70
 !MINHOUNSFIELDINVOI    -200
 !MINDENSINVOI    1
-!DOSEGRIDSIZE    2.5
+!DOSEGRIDSIZE    2.9999999999999996
 !MINFIELDSIZE    200
 !MINAREADIFFERENCE    0
-!GRADEOFSMOOTHING    Medium
+!GRADEOFSMOOTHING    Low
 !HIDELEAFGAP    0
 !SURFACEMARGIN    3
 !AUTOFLASHMARGIN    2
 !MCVARPERPLAN    1
-!MCSEGMENTVARIANCE    0.0050000000000000001
-!MCVARIANCE    0.0050000000000000001
+!MCVARIANCE    0.01
 !DOSETOMEDIUM    1
 !FORCEWATER    0
-!STORECOUCHCOILDOSE    0
-!ISOCENTRE    coordinate=6.2000000000000002, -137, -56
+!ISOCENTRE    coordinate=-10, -72, 50
 !PARETOMODE    0
 !SHAPEOPTIMIZATION    1
 !CFSHAPEOPTIMIZATION    0
@@ -213,7 +211,7 @@
 !DMLCMAXCP    30
 !VMATMAXCP    180
 !MAXSWEEPEFFICIENCY    1
-!MINWIDTH    10
+!MINWIDTH    5
 !MAXCPFORSTATIC    250
 !TARGETEDGE    Normal
 !AVOIDANCEEDGE    Normal
@@ -226,20 +224,6 @@
 !PROTON_MC_RELATIVE_DOSE_THRESHOLD    5
 !PROTON_MC_PARTICLES_PER_SPOT    10000000
 !PROTON_MC_UNCERTAINTY_PER_SPOT    1
-!PILOT_BEAMLETS    1
-!MAX_SHAPE_LOOPS    5
-!PROTON_OPT_TOLERANCE    0.0001
-!PROTON_OPT_MAX_ITERATIONS    200
-!PROTON_BEAM_DOSE_UNIFORMITY_WEIGHT    4
-!PROTON_USE_UNIFORMITY_FOR_IMPT    0
-!IDOSE_RBE_MODEL_ID    
-!IDOSE_NUCLEAR_INTERACTION    0
-!IDOSE_SPOT_MODE    1
-!IDOSE_CALC_ALGO    4
-!CS_KERNEL_GENERATION_PRECISION    3
-!CS_FINAL_CALCULATION_PRECISION    3
-!ISPHANTOMMATERIAL    1
-!MC_THRESHOLD_OBJ    0
 
 # se
     !COSTFUNCTION
@@ -251,23 +235,21 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
+        shrinkmargin=0
         alpha=0
         beta_alpha=0
         celldensity=0
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=12
+        exponent=16
         thresholddose=1
-        isoconstraint=0
+        isoconstraint=45
         isoeffect=0
         relativeimpact=0
         status=1
         manual=0
         weight=0.01
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
     !END
 
 # pa
@@ -295,9 +277,6 @@
         status=1
         manual=0
         weight=0.01
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
     !END
 
 # qp
@@ -306,7 +285,7 @@
         usedensity=0
         effectweighting=0
         totalvolume=0
-        sanesurfacedose=1
+        sanesurfacedose=0
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
@@ -319,20 +298,44 @@
         refvolume=0.98
         exponent=1
         thresholddose=1
-        isoconstraint=69.96
+        isoconstraint=63
         isoeffect=0
         relativeimpact=0
         status=1
         manual=0
         weight=1
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
     !END
 
 # oq
     !COSTFUNCTION
         type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=64
+        isoconstraint=2.1
+        isoeffect=0
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+
+# mxd
+    !COSTFUNCTION
+        type=mxd
         usedensity=0
         effectweighting=0
         totalvolume=0
@@ -348,50 +351,17 @@
         functreserve=50
         refvolume=0
         exponent=1
-        thresholddose=30
-        isoconstraint=1
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.01
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
-    !END
-
-# mxd
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=1
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
         thresholddose=1
-        isoconstraint=75
+        isoconstraint=8
         isoeffect=0
         relativeimpact=0
         status=1
         manual=0
-        weight=0.01
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
+        weight=1
     !END
 
 # conf
-    !COSTFUNCTION
+   !COSTFUNCTION
         type=conf
         usedensity=0
         effectweighting=0
@@ -415,7 +385,4 @@
         status=1
         manual=0
         weight=0.01
-        groupmargins=0
-        applyshrinkmargintooars=0
-        oarsmargin=0
     !END

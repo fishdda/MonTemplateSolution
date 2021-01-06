@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import time
 import pydicom 
-from GT_MONACO511_20200302 import HYP_Editor_MONACO511
 import os
 
 
@@ -16,7 +15,7 @@ st.title('Monaco IntelliTemplate V511')
 
 
 
-
+st.header('Machine Learning Module')
 ## Machine Learning Tool (PCA+SVR)
 uploaded_file2 = st.file_uploader("Please Upload DVH DataBase", type=["csv"])
 if uploaded_file2:
@@ -27,13 +26,14 @@ if uploaded_file2:
 
 
 
-
+st.header('E-Protocol Module and Renaming Structure in Monaco')
 ## ====upload your electronic protocol==== ##
 uploaded_file_protocol = st.file_uploader("Please Upload Electronic Protocol", type=["xlsx","csv"])
 
 if uploaded_file_protocol:
     df = pd.read_excel(uploaded_file_protocol)
     st.dataframe(df)
+    pt_id = '00'+str(df.columns[1])     # determine which 
 
 ## ====upload your rtss.dicom files==== ##
 uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files", type=["DCM"])
@@ -44,20 +44,28 @@ if uploaded_file_rtssDCM:
 ## ====Parameters need be entered by users==== #
 
 Parameters_To_Template = {}
+
+st.header('Monaco Plan Template Generation')
+
 # Prescription Checking
-st.header('Dose Prescription Setting')
+st.subheader('Dose Prescription Setting')
 
 num_fx = st.number_input('number of fractions:')
 st.write('The current number is ',num_fx)
 Parameters_To_Template[str(num_fx)] = num_fx # send parameters
+
+fx = Parameters_To_Template[str(num_fx)]
 
 
 fx_dose = st.number_input('Dose per fraction:(Gy)')
 st.write('The current number is ',fx_dose)
 Parameters_To_Template[str(fx_dose)] = fx_dose # send parameters
 
+prep_dose= Parameters_To_Template[str(fx_dose)] * Parameters_To_Template[str(num_fx)]
+
+
 # dose calculation settings
-st.header('Dose Calculation Setting')
+st.subheader('Dose Calculation Setting')
 
 dose_alg_option = st.selectbox(
     'Please Select dose calculation algorithm',
@@ -67,6 +75,7 @@ if dose_alg_option == 'Monte Carlo':
     num = st.number_input('Grid Spacing:(cm), Note 0.1-0.8cm')
     st.write('The current number is ',num)
     Parameters_To_Template["dose_grid_spacing"] = num # send parameters
+    grid_dose = 10* Parameters_To_Template["dose_grid_spacing"]  # mm
 
     dose_option = st.selectbox(
         'Statistical Uncertainty(%)',
@@ -83,7 +92,7 @@ if dose_alg_option == 'Monte Carlo':
 
 
     # sequencing settings
-    st.header('Sequencing Setting')
+    st.subheader('Sequencing Setting')
 
     option = st.selectbox(
         'Select which kind of Delivery Approaches',
@@ -91,6 +100,7 @@ if dose_alg_option == 'Monte Carlo':
 
     st.write('You selected:', option)
     Parameters_To_Template['Delivery_Approach'] = option
+    delivery_method = Parameters_To_Template['Delivery_Approach']
 
     # VMAT sequencing parameters setting
     if option == "VMAT":
@@ -113,6 +123,8 @@ if dose_alg_option == 'Monte Carlo':
 
 
 ## ====Generate Monaco Plan Template==== ## 
+st.header('Click to Batch Generation of Monaco Plan Template')
+
 if st.button('Start Intelligently Generating a Monaco Template'):
     
     'Starting a long computation...'
@@ -126,39 +138,39 @@ if st.button('Start Intelligently Generating a Monaco Template'):
         bar.progress(i + 1)
         time.sleep(0.1)
 
-    '...and now we\'re done!(Please Check C:\FocalData\Installation\MonacoTemplate\)'
+    "...and now we\'re done!"
 
 
 
-###############################################################################
-#################################   GUI   #####################################
-pt_id = '00'+df.columns[1]
-
-delivery_method = Parameters_To_Template['Delivery_Approach']
-fx = Parameters_To_Template['num_fx']
-prep_dose=Parameters_To_Template['fx_dose'] * Parameters_To_Template['num_fx']
-grid_dose = 10* Parameters_To_Template["dose_grid_spacing"]  # mm
-###############################################################################
+    ###############################################################################
+    #################################   GUI   #####################################
 
 
-# default file path 
-path = 'C:/Users/xhuae08006/OneDrive - Elekta/Documents/MonTemplateSolution/HYPSolution511'
+    # delivery_method = Parameters_To_Template['Delivery_Approach']
+    # fx = Parameters_To_Template[str(num_fx)]
+    # prep_dose=Parameters_To_Template['fx_dose'] * Parameters_To_Template['num_fx']
+    # grid_dose = 10* Parameters_To_Template["dose_grid_spacing"]  # mm
+    ###############################################################################
 
-# absolute path for electronic protocol 
-protocol_xlsx = os.path.join(path,'XH protocol.xlsx')
+    from MONACO511_TG_WEB import Initialization_MON511
+    # default file path 
+    path = 'C:/Users/xhuae08006/OneDrive - Elekta/Documents/MonTemplateSolution/HYPSolution511'
 
-# absolute path for structure name changes
-PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
-X = HYP_Editor_MONACO511(pt_id,
-                         delivery_method,
-                         fx,
-                         prep_dose,
-                         grid_dose,
-                         path,
-                         protocol_xlsx,
-                         PT_path)
-        
-X.MAIN_GENERATE('NPC')
+    # absolute path for electronic protocol 
+    protocol_xlsx = os.path.join(path,'XH protocol.xlsx')
+
+    # absolute path for structure name changes
+    PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
+    X = Initialization_MON511(pt_id,
+                            delivery_method,
+                            fx,
+                            prep_dose,
+                            grid_dose,
+                            path,
+                            protocol_xlsx)
+            
+    X.MAIN_GENERATE('NPC')
 
 
 ## download the Plan Template from Cloud
+st.header('Monaco Plan Template Download')
