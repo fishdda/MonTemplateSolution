@@ -1,17 +1,13 @@
 import streamlit as st
 import pandas as pd
 import time
+import pydicom 
 
 ## Set a project title
 st.title('Monaco IntelliTemplate V511')
 
 
-## upload your electronic protocol
-uploaded_file = st.file_uploader("Please Upload your Electronic Protocol", type=["xlsx","csv"])
 
-if uploaded_file:
-    df = pd.read_excel(uploaded_file)
-    st.dataframe(df)
 
 ## search if the CT and structure has already been defined
 
@@ -19,13 +15,30 @@ if uploaded_file:
 
 
 ## Machine Learning Tool (PCA+SVR)
-uploaded_file2 = st.file_uploader("Please Upload DVH DataBase", type=["xlsx","csv"])
+uploaded_file2 = st.file_uploader("Please Upload DVH DataBase", type=["csv"])
 if uploaded_file2:
     DVH_DATA = pd.read_csv("DVH_Parotid_L_Clean.csv")
     st.line_chart(DVH_DATA.iloc[:,1:5])
 
 
-## Parameters need be entered by users
+
+
+
+
+## ====upload your electronic protocol==== ##
+uploaded_file_protocol = st.file_uploader("Please Upload Electronic Protocol", type=["xlsx","csv"])
+
+if uploaded_file_protocol:
+    df = pd.read_excel(uploaded_file_protocol)
+    st.dataframe(df)
+
+## ====upload your rtss.dicom files==== ##
+uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files", type=["DCM"])
+if uploaded_file_rtssDCM:
+    dcm = pydicom.read_file(uploaded_file_rtssDCM)
+    st.text(dcm.Modality)
+
+## ====Parameters need be entered by users==== #
 
 # Prescription Checking
 st.header('Dose Prescription Setting')
@@ -86,7 +99,7 @@ if dose_alg_option == 'Monte Carlo':
 
 
 
-## generate Monaco Plan Template 
+## ====Generate Monaco Plan Template==== ## 
 if st.button('Start Intelligently Generating a Monaco Template'):
     
     'Starting a long computation...'
