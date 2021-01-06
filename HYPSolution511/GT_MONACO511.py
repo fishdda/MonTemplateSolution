@@ -12,7 +12,15 @@ class HYP_Editor_MONACO511:
        
     '''
     
-    def  __init__(self,hyp_element_path,protocol_xlsx,demo_xml_path,output_xml_path,contourname_path,NAMING_LIB,hyp_path_new,updated_template_path,new_contourname_path):
+    def  __init__(self,hyp_element_path,
+                       protocol_xlsx,
+                       demo_xml_path,
+                       output_xml_path,
+                       contourname_path,
+                       NAMING_LIB,
+                       hyp_path_new,
+                       updated_template_path,
+                       new_contourname_path):
         
         self.hypelement = hyp_element_path # hyp elements (including each parts)
         

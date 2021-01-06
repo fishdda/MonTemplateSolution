@@ -7,7 +7,7 @@ Created on Tue Jan 14 11:42:10 2020
        
 #from GT_MONACO511_20200302 import HYP_Editor_MONACO511
 from GT_MONACO_20200312 import Initialization_MON551
-
+import os
 ###############################################################################
 #################################   GUI   #####################################
 #pt_id = '003'
@@ -22,10 +22,10 @@ grid_dose = 2.5
 
 
 # default file path 
-path = 'C:/auto template/HYPSolution5.51'
+path = 'C:/Users/xhuae08006/OneDrive - Elekta/Documents/MonTemplateSolution/HYPSolution511'
 
 # absolute path for electronic protocol 
-protocol_xlsx = 'C:/auto template/XH protocol.xlsx'
+protocol_xlsx = os.path.join(path,'XH protocol.xlsx')
 
 # absolute path for structure name changes
 PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
