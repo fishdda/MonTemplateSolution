@@ -26,28 +26,53 @@ if uploaded_file2:
 
 
 ## Parameters need be entered by users
-title = st.text_input('Movie title', 'Life of Brian')
-st.write('The current movie title is', title)
 
-number = st.number_input('Insert a number')
-st.write('The current number is ', number)
+# dose calculation settings
+st.header('Dose Calculation Setting')
 
-option = st.selectbox(
-    'Select which kind of Delivery Approaches',
-    ('Step&Shoot', 'dMLC', 'VMAT'))
+dose_alg_option = st.selectbox(
+    'Please Select dose calculation algorithm',
+    ('Monte Carlo', 'Pencil Beam'))
+    
+if dose_alg_option == 'Monte Carlo':
+    num = st.number_input('Grid Spacing:(cm), Note 0.1-0.8cm')
+    st.write('The current number is ',num)
 
-st.write('You selected:', option)
+    dose_option = st.selectbox(
+        'Statistical Uncertainty(%)',
+        ('Per Control Point', 'Per Calculation'))
 
-# VMAT sequencing parameters setting
-if option == "VMAT":
-
-    arc_option = st.selectbox(
-        'Select Maximum Arcs you want to use',
-        ('1', '2', '3','4'))
-
-    st.write('You selected:', arc_option)
+    if dose_option == 'Per Control Point':
+        dose_uncertainty = st.number_input('Per Control Point(%):')
+        st.write('The current number is ',dose_uncertainty)
+    elif dose_option == 'Per Calculation':
+        dose_uncertainty = st.number_input('Per Calculation(%):')
+        st.write('The current number is ',dose_uncertainty)
 
 
+    # sequencing settings
+    st.header('Sequencing Setting')
+
+    option = st.selectbox(
+        'Select which kind of Delivery Approaches',
+        ('Step&Shoot', 'dMLC', 'VMAT'))
+
+    st.write('You selected:', option)
+
+    # VMAT sequencing parameters setting
+    if option == "VMAT":
+
+        arc_option = st.selectbox(
+            'Maximum Number of Arcs:',
+            ('1', '2', '3','4'))
+
+        st.write('You selected:', arc_option)
+
+        number1 = st.number_input('Max.# of Control Points Per Arc:')
+        st.write('The current number is ', number1)
+
+        number2 = st.number_input('Min. Segment Width(cm):')
+        st.write('The current number is ', number2)  
 
 
 
