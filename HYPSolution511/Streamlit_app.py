@@ -10,18 +10,19 @@ st.title('Monaco IntelliTemplate V511')
 
 
 
-
 ## search if the CT and structure has already been defined
 
 
 
 st.header('Machine Learning Module')
 ## Machine Learning Tool (PCA+SVR)
+st.subheader('PCA+SVR approach')
 uploaded_file2 = st.file_uploader("Please Upload DVH DataBase", type=["csv"])
 if uploaded_file2:
     DVH_DATA = pd.read_csv("DVH_Parotid_L_Clean.csv")
     st.line_chart(DVH_DATA.iloc[:,1:5])
 
+st.subheader('SDAE+1DCNN approach')
 
 
 
@@ -174,3 +175,4 @@ if st.button('Start Intelligently Generating a Monaco Template'):
 
 ## download the Plan Template from Cloud
 st.header('Monaco Plan Template Download')
+st.subheader('RTOG Monaco Template Downloads')
