@@ -1945,7 +1945,7 @@ class Initialization_MON511(HYP_Editor_MONACO511):
                                                              grid=self.grid_dose,
                                                              fractions=self.fx,
                                                              prescription_dose=self.prep_dose,
-                                                             delivery_type=self.delivery_method)            
+                                                             delivery_type=self.delivery_method)           
         
         HYP_Editor_MONACO511.write_colone(self)
         

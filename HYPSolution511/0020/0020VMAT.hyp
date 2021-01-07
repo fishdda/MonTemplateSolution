@@ -1,7 +1,7 @@
 000510b6
 !LAYERING
-    PGTVnx:T
     PGTVrpn:T
+    PGTVnx:T
     PGTVnd:T
     PCTV:T
     Optical Chiasm:T
@@ -32,7 +32,7 @@
     BODY
 !END
 !VOIDEF
-    name=PGTVnx
+    name=PGTVrpn
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
@@ -87,7 +87,7 @@
     !END
 !END
 !VOIDEF
-    name=PGTVrpn
+    name=PGTVnx
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
@@ -1349,7 +1349,7 @@
 !CFSHAPEOPTIMIZATION    0
 !CONSTDOSERATE    0
 !DMLCMAXCP    30
-!VMATMAXCP    180
+!VMATMAXCP    120.0
 !MAXSWEEPEFFICIENCY    1
 !MINWIDTH    5
 !MAXCPFORSTATIC    250

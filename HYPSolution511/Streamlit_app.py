@@ -13,11 +13,15 @@ mon_option = st.sidebar.selectbox(
 
 Mode = st.sidebar.selectbox(
     'Pareto or Constrained Mode Selection',
-    ('Pareto','Constrained'))
+    ('Constrained','Pareto'))
 
 if mon_option == 'MONV511':
     MONV511_UI(Mode)
 elif mon_option == 'MONV559b':
     MONV559b_UI()
+
+st.sidebar.subheader('Monaco CFs Display')
+
+
 
 

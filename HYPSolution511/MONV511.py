@@ -21,7 +21,6 @@ def MONV511_UI(Mode):
         DVH_DATA = pd.read_csv("DVH_Parotid_L_Clean.csv")
         st.line_chart(DVH_DATA.iloc[:,1:10])
 
-
     st.header('E-Protocol Module and Renaming Structure in Monaco')
     ## ====upload your electronic protocol==== ##
     uploaded_file_protocol = st.file_uploader("Please Upload Electronic Protocol", type=["xlsx","csv"])
@@ -32,7 +31,7 @@ def MONV511_UI(Mode):
         pt_id = '00'+str(df.columns[1])     # determine which 
 
     ## ====upload your rtss.dicom files==== ##
-    uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files(optional)", type=["DCM"])
+    uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files for renaming(optional)", type=["DCM"])
     if uploaded_file_rtssDCM:
         dcm = pydicom.read_file(uploaded_file_rtssDCM)
         st.text(dcm.Modality)
@@ -44,11 +43,27 @@ def MONV511_UI(Mode):
     st.header('Monaco Plan Template Generation')
 
     # Plan Site Checking
-    st.subheader('Tumor Sites ReChecking')
+    st.subheader('Tumor Sites Checking')
     tumor_option = st.selectbox(
         'Please Checking the Tumor Sites',
-        ('NPC', 'Prostate', 'Lung', 'Pancreas', 'Lung SBRT','Liver'))
+        ('Prostate','NPC', 'Lung', 'Pancreas', 'Lung SBRT','Liver'))
     st.write('User Select ',tumor_option)
+
+    if tumor_option == 'NPC':
+
+        # Expert or Cancer center
+        st.subheader('Expert or Institute Rule')
+        rule_option = st.selectbox(
+            'Please Select Rule types',
+            ('NPC_PekingUnion_6996cGy_Physicist1',
+             'NPC_PekingUnion_70Gy_Physicist1', 
+             'NPC_PekingUnion_70Gy_Physicist2',
+             'NPC_SYSUCC_70Gy_Physicist3',
+             'NPC_CAMS_70Gy_Physicist4',
+             'NPC_PekingUniversityFirst_70Gy_Physicist4'))
+        st.write('User Select ',rule_option)
+
+
 
     # Prescription Checking
     st.subheader('Dose Prescription Setting')
@@ -178,5 +193,5 @@ def MONV511_UI(Mode):
 
 
     ## download the Plan Template from Cloud
-    st.header('Monaco Plan Template Download')
-    st.subheader('RTOG Monaco Template Downloads')
+    st.header('Monaco Plan Templates Download')
+    st.subheader('RTOG Monaco Template Downloads (Cloud Service)')
