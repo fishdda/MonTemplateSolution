@@ -19,9 +19,7 @@ def MONV511_UI(Mode):
     uploaded_file2 = st.file_uploader("Please Upload DVH DataBase", type=["csv"])
     if uploaded_file2:
         DVH_DATA = pd.read_csv("DVH_Parotid_L_Clean.csv")
-        st.line_chart(DVH_DATA.iloc[:,1:5])
-
-    st.subheader('SDAE+1DCNN approach')
+        st.line_chart(DVH_DATA.iloc[:,1:10])
 
 
     st.header('E-Protocol Module and Renaming Structure in Monaco')
@@ -34,7 +32,7 @@ def MONV511_UI(Mode):
         pt_id = '00'+str(df.columns[1])     # determine which 
 
     ## ====upload your rtss.dicom files==== ##
-    uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files", type=["DCM"])
+    uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files(optional)", type=["DCM"])
     if uploaded_file_rtssDCM:
         dcm = pydicom.read_file(uploaded_file_rtssDCM)
         st.text(dcm.Modality)
@@ -44,6 +42,13 @@ def MONV511_UI(Mode):
     Parameters_To_Template = {}
 
     st.header('Monaco Plan Template Generation')
+
+    # Plan Site Checking
+    st.subheader('Tumor Sites ReChecking')
+    tumor_option = st.selectbox(
+        'Please Checking the Tumor Sites',
+        ('NPC', 'Prostate', 'Lung', 'Pancreas', 'Lung SBRT','Liver'))
+    st.write('User Select ',tumor_option)
 
     # Prescription Checking
     st.subheader('Dose Prescription Setting')
@@ -108,7 +113,7 @@ def MONV511_UI(Mode):
                 ('1', '2', '3','4'))
 
             st.write('You selected:', arc_option)
-            Parameters_To_Template['Arc Numbers'] = arc_option
+            Parameters_To_Template['Arc Numbers'] = arc_option # string
 
             CP_number = st.number_input('Max.# of Control Points Per Arc:')
             st.write('The current number is ', CP_number)
@@ -132,7 +137,7 @@ def MONV511_UI(Mode):
         bar = st.progress(0)
 
         for i in range(100):
-            latest_iteration.text(f'Iteration {i+1}')
+            latest_iteration.text(f'TimeCost {i+1}')
             bar.progress(i + 1)
             time.sleep(0.1)
 
@@ -158,16 +163,18 @@ def MONV511_UI(Mode):
         protocol_xlsx = os.path.join(path,'XH protocol.xlsx')
 
         # absolute path for structure name changes
-        PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
+        # PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
         X = Initialization_MON511(pt_id,
-                                delivery_method,
-                                fx,
-                                prep_dose,
-                                grid_dose,
-                                path,
-                                protocol_xlsx)
+                                  delivery_method,
+                                  fx,
+                                  prep_dose,
+                                  grid_dose,
+                                  path,
+                                  protocol_xlsx,
+                                  CP_number,
+                                  arc_option)
                 
-        X.MAIN_GENERATE('NPC')
+        X.MAIN_GENERATE(tumor_option) # tumor option should be selected by users line #50
 
 
     ## download the Plan Template from Cloud

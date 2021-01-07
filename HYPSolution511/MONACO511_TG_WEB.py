@@ -1018,7 +1018,13 @@ class HYP_Editor_MONACO511:
         
         return self.template_line
 
-    def hyp_solution_NPC_V1(self,grid,fractions,prescription_dose,delivery_type):
+    def hyp_solution_NPC_V1(self,
+                            grid,
+                            fractions,
+                            prescription_dose,
+                            delivery_type,
+                            CP_number,
+                            arc_option):
         
         '''
            hyp_solution_NPC used for Head and neck cases
@@ -1430,6 +1436,12 @@ class HYP_Editor_MONACO511:
                 
             elif 'DOSEGRIDSIZE' in item:
                 part5[i] = ''.join(['!DOSEGRIDSIZE    ',str(float(grid)),'\n'])
+
+            elif 'VMATMAXCP' in item:
+                part5[i] = ''.join(['!VMATMAXCP    ',str(float(CP_number)),'\n'])
+
+            elif 'MAXNARCS'  in item:
+                part5[i] = ''.join(['!MAXNARCS    ',str(int(arc_option)),'\n'])
         
         ## ================== template ==================== ##        
         self.template_line = self.template_line + part1 + target + OARs + part3 + part4 + part5
@@ -1868,7 +1880,9 @@ class Initialization_MON511(HYP_Editor_MONACO511):
                       prep_dose,
                       grid_dose,
                       path,
-                      protocol_xlsx):
+                      protocol_xlsx,
+                      CP_number,
+                      arc_option):
         import os
         
         self.pt_id = pt_id
@@ -1877,6 +1891,8 @@ class Initialization_MON511(HYP_Editor_MONACO511):
         self.prep_dose = prep_dose
         self.grid_dose = grid_dose
         self.protocol_xlsx = protocol_xlsx
+        self.CP_number = CP_number
+        self.arc_option = arc_option
 
         # original template folder and file path
         hyp_element_path = os.path.join(path,'hyp_element511.txt')
@@ -1918,10 +1934,12 @@ class Initialization_MON511(HYP_Editor_MONACO511):
         # generate new hyp file
         if LABEL == 'NPC':
             self.updated_template = HYP_Editor_MONACO511.hyp_solution_NPC_V1(self,
-                                                             grid=self.grid_dose,
-                                                             fractions=self.fx,
-                                                             prescription_dose=self.prep_dose,
-                                                             delivery_type=self.delivery_method)
+                                                                             grid=self.grid_dose,
+                                                                             fractions=self.fx,
+                                                                             prescription_dose=self.prep_dose,
+                                                                             delivery_type=self.delivery_method,
+                                                                             CP_number=self.CP_number,
+                                                                             arc_option=self.arc_option)
         elif LABEL == 'Prostate':
             self.updated_template = HYP_Editor_MONACO511.hyp_solution_Prostate_V1(self,
                                                              grid=self.grid_dose,
