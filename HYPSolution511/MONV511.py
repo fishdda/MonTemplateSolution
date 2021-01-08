@@ -137,6 +137,10 @@ def MONV511_UI(Mode):
             number2 = st.number_input('Min. Segment Width(cm):')
             st.write('The current number is ', number2)  
             Parameters_To_Template['Min. Segment Width(cm)'] = number2
+        
+        elif option == 'Step&Shoot':
+
+            
 
 
 
