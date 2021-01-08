@@ -1,4 +1,4 @@
-def MONV511_UI(Mode):
+def MONV511_UI_MPTD(Mode):
     import streamlit as st
     import pandas as pd
     import time
