@@ -29,7 +29,7 @@ def MONV511_UI(Mode):
     if uploaded_file_protocol:
         df = pd.read_excel(uploaded_file_protocol)
         st.dataframe(df)
-        pt_id = '00'+str(df.columns[1])     # determine which 
+        patient_id = '00'+str(df.columns[1])     # determine which 
 
     ## ====upload your rtss.dicom files==== ##
     uploaded_file_rtssDCM = st.file_uploader("Please Upload RT structure DICOM files for renaming(optional)", type=["DCM"])
@@ -37,6 +37,8 @@ def MONV511_UI(Mode):
         dcm = pydicom.read_file(uploaded_file_rtssDCM)
         st.text(dcm.Modality)
 
+    
+    
     ## ====Parameters need be entered by users==== #
 
     Parameters_To_Template = {}
@@ -46,7 +48,7 @@ def MONV511_UI(Mode):
     # Plan Site Checking
     st.subheader('Tumor Sites Checking')
     tumor_option = st.selectbox(
-        'Please Checking the Tumor Sites',
+        'Please Checking the Tumor Sites (Currently we only support NPC)',
         ('Prostate','NPC', 'Lung', 'Pancreas', 'Lung SBRT','Liver'))
     st.write('User Select ',tumor_option)
 
@@ -73,15 +75,10 @@ def MONV511_UI(Mode):
     st.write('The current number is ',num_fx)
     Parameters_To_Template[str(num_fx)] = num_fx # send parameters
 
-    fx = Parameters_To_Template[str(num_fx)]
-
 
     fx_dose = st.number_input('Dose per fraction:(Gy)')
     st.write('The current number is ',fx_dose)
     Parameters_To_Template[str(fx_dose)] = fx_dose # send parameters
-
-    prep_dose= Parameters_To_Template[str(fx_dose)] * Parameters_To_Template[str(num_fx)]
-
 
     # dose calculation settings
     st.subheader('Dose Calculation Setting')
@@ -94,10 +91,9 @@ def MONV511_UI(Mode):
         num = st.number_input('Grid Spacing:(cm), Note 0.1-0.8cm')
         st.write('The current number is ',num)
         Parameters_To_Template["dose_grid_spacing"] = num # send parameters
-        grid_dose = 10* Parameters_To_Template["dose_grid_spacing"]  # mm
+        
 
-        dose_option = st.selectbox(
-            'Statistical Uncertainty(%)',
+        dose_option = st.selectbox('Statistical Uncertainty(%)',
             ('Per Control Point', 'Per Calculation'))
 
         if dose_option == 'Per Control Point':
@@ -110,7 +106,7 @@ def MONV511_UI(Mode):
             Parameters_To_Template['Per Calculation(%)'] = dose_uncertainty # send parameters
 
 
-        # sequencing settings
+        # Sequencing settings
         st.subheader('Sequencing Setting')
 
         option = st.selectbox(
@@ -121,33 +117,49 @@ def MONV511_UI(Mode):
         Parameters_To_Template['Delivery_Approach'] = option
         delivery_method = Parameters_To_Template['Delivery_Approach']
 
+        Sequencing_Parameters = {}
+
         # VMAT sequencing parameters setting
         if option == "VMAT":
 
-            arc_option = st.selectbox(
-                'Maximum Number of Arcs:',
+            Sequencing_Parameters[option] = {}
+
+            # Maximum Number of Arcs in VMAT
+            Arc_option = st.selectbox('Maximum Number of Arcs:',
                 ('1', '2', '3','4'))
+            st.write('You selected:', Arc_option)
+            Sequencing_Parameters[option]['Arc Numbers'] = Arc_option # string
 
-            st.write('You selected:', arc_option)
-            Parameters_To_Template['Arc Numbers'] = arc_option # string
-
+            # Maximum Number of Control Points Per Arc
             CP_number = st.number_input('Max.# of Control Points Per Arc:')
             st.write('The current number is ', CP_number)
-            Parameters_To_Template['CP_number per Arc'] = CP_number
+            Sequencing_Parameters[option]['CP_number per Arc'] = CP_number
 
-            number2 = st.number_input('Min. Segment Width(cm):')
-            st.write('The current number is ', number2)  
-            Parameters_To_Template['Min. Segment Width(cm)'] = number2
+            # Minimum Segment Width (cm)
+            Min_Seg_Width = st.number_input('Min. Segment Width(cm):')
+            st.write('The current number is ', Min_Seg_Width)  
+            Sequencing_Parameters[option]['Min. Segment Width(cm)'] = Min_Seg_Width
         
+        # dMLC sequencing parameters setting
         elif option == 'dMLC':
 
+            Sequencing_Parameters[option] = {}
+
+            # Maximum Number of Control Points Per Beam
             CP_number_per_beam = st.number_input('Max. # of Control Points Per Beam:')
             st.write('The current number is ', CP_number_per_beam)
-            # Parameters_To_Template['CP_number per Arc'] = CP_number
+            Sequencing_Parameters[option]['CP_number_per_beam'] = CP_number_per_beam # number
 
+            # Minimum Segment Width (cm)
             Min_Seg_Width = st.number_input('Min. Segment Width (cm):')
             st.write('The current number is ', Min_Seg_Width)
-            
+            Sequencing_Parameters[option]['Min_Seg_Width'] = Min_Seg_Width
+
+            Max_Sweep_Efficiency = st.checkbox("Max. Sweep Efficiency")    # bool
+            Move_Only_Seg        = st.checkbox("Allow Move Only Segments") # bool
+            Sequencing_Parameters[option]['Max_Sweep_Efficiency'] = Max_Sweep_Efficiency
+            Sequencing_Parameters[option]['Move_Only_Seg'] = Move_Only_Seg
+
     ## ====Generate Monaco Plan Template==== ## 
     st.header('Click to Batch Generation of Monaco Plan Template')
 
@@ -180,22 +192,21 @@ def MONV511_UI(Mode):
 
         from MONACO511_MPTG_WEB import Initialization_MON511
         # default file path 
-        path = 'C:/Users/xhuae08006/OneDrive - Elekta/Documents/MonTemplateSolution/HYPSolution511'
+        file_path = 'C:/Users/xhuae08006/OneDrive - Elekta/Documents/MonTemplateSolution/HYPSolution511'
 
         # absolute path for electronic protocol 
-        protocol_xlsx = os.path.join(path,'XH protocol.xlsx')
+        protocol_xlsx_path = os.path.join(file_path,'XH protocol.xlsx')
 
         # absolute path for structure name changes
         # PT_path = 'C:/Users/Public/Documents/CMS/FocalData/Installation/5~Clinic_XH/1~'
-        X = Initialization_MON511(pt_id,
-                                  delivery_method,
-                                  fx,
-                                  prep_dose,
-                                  grid_dose,
-                                  path,
-                                  protocol_xlsx,
-                                  CP_number,
-                                  arc_option)
+        X = Initialization_MON511(pt_id     = patient_id,
+                                  delivery  = delivery_method,
+                                  fx        = Parameters_To_Template[str(num_fx)],
+                                  prep_dose = Parameters_To_Template[str(fx_dose)] * Parameters_To_Template[str(num_fx)],
+                                  grid_dose = 10* Parameters_To_Template["dose_grid_spacing"],
+                                  path      = file_path,
+                                  protocol_xlsx = protocol_xlsx_path,
+                                  sequencing = Sequencing_Parameters)
                 
         X.MAIN_GENERATE(tumor_option) # tumor option should be selected by users line #50
 

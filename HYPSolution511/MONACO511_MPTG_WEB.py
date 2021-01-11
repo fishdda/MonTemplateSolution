@@ -1023,8 +1023,7 @@ class HYP_Editor_MONACO511:
                             fractions,
                             prescription_dose,
                             delivery_type,
-                            CP_number,
-                            arc_option):
+                            sequencing):
         
         '''
            hyp_solution_NPC used for Head and neck cases
@@ -1381,9 +1380,7 @@ class HYP_Editor_MONACO511:
     
                 OARs = OARs + part2 + cf[:-1]
                 OARs.append('!END\n')
-                   
 
-                
                            
             elif item == 'BODY' or item == 'Patient' or item == 'Body': ## patient
                 
@@ -1421,27 +1418,55 @@ class HYP_Editor_MONACO511:
         if delivery_type == 'VMAT':
             # VMAT 360 ARC
             part4 = self.element['# Part4_VMAT\n'][:-1] 
-        elif delivery_type == 'IMRT':
-            # IMRT 9beams step&shoot
-            part4 = self.element['# Part4_IMRT\n'][:-1]
-        
-        ## ============================ part5 ============================== ##
-        part5 = self.element['# Part5\n'][:-1]
-        for i,item in enumerate(part5):
-            if 'FRACTIONS' in item:
-                part5[i] = ''.join(['!FRACTIONS    ',str(fractions),'\n'])
-            
-            elif 'PRESCRIPTION' in item:
-                part5[i] = ''.join(['!PRESCRIPTION    ',str(float(prescription_dose)),'\n'])
+
+            ## ============================ part5 ============================== ##
+            part5 = self.element['# Part5\n'][:-1]
+            for i,item in enumerate(part5):
+                if 'FRACTIONS' in item:
+                    part5[i] = ''.join(['!FRACTIONS    ',str(fractions),'\n'])
                 
-            elif 'DOSEGRIDSIZE' in item:
-                part5[i] = ''.join(['!DOSEGRIDSIZE    ',str(float(grid)),'\n'])
+                elif 'PRESCRIPTION' in item:
+                    part5[i] = ''.join(['!PRESCRIPTION    ',str(float(prescription_dose)),'\n'])
+                    
+                elif 'DOSEGRIDSIZE' in item:
+                    part5[i] = ''.join(['!DOSEGRIDSIZE    ',str(float(grid)),'\n'])
 
-            elif 'VMATMAXCP' in item:
-                part5[i] = ''.join(['!VMATMAXCP    ',str(float(CP_number)),'\n'])
+                elif 'VMATMAXCP' in item:
+                    part5[i] = ''.join(['!VMATMAXCP    ',str(float(sequencing[delivery_type]['CP_number per Arc'])),'\n'])
 
-            elif 'MAXNARCS'  in item:
-                part5[i] = ''.join(['!MAXNARCS    ',str(int(arc_option)),'\n'])
+                elif 'MAXNARCS'  in item:
+                    part5[i] = ''.join(['!MAXNARCS    ',str(int(sequencing[delivery_type]['Arc Numbers'])),'\n'])
+
+                elif 'MINWIDTH'  in item:
+                    part5[i] = ''.join(['!MINWIDTH    ',str(int(sequencing[delivery_type]['Min. Segment Width(cm)'])),'\n'])
+
+        elif delivery_type == 'dMLC':
+            
+            # IMRT 9beams dMLC
+            part4 = self.element['# Part4_IMRT\n'][:-1]
+
+            ## ============================ part5 ============================== ##
+            part5 = self.element['# Part5\n'][:-1]
+            for i,item in enumerate(part5):
+                if 'FRACTIONS' in item:
+                    part5[i] = ''.join(['!FRACTIONS    ',str(fractions),'\n'])
+                
+                elif 'PRESCRIPTION' in item:
+                    part5[i] = ''.join(['!PRESCRIPTION    ',str(float(prescription_dose)),'\n'])
+                    
+                elif 'DOSEGRIDSIZE' in item:
+                    part5[i] = ''.join(['!DOSEGRIDSIZE    ',str(float(grid)),'\n'])
+
+                elif 'DMLCMAXCP' in item:
+                    part5[i] = ''.join(['!DMLCMAXCP    ',str(float(sequencing[delivery_type]['CP_number_per_beam'])),'\n'])
+
+                elif 'MINWIDTH'  in item:
+                    part5[i] = ''.join(['!MINWIDTH    ',str(int(sequencing[delivery_type]['Min_Seg_Width'])),'\n'])
+
+                elif 'MAXSWEEPEFFICIENCY' in item:
+                    part5[i] = ''.join(['!MAXSWEEPEFFICIENCY    ',str(int(sequencing[delivery_type]["Max_Sweep_Efficiency"])),'\n'])
+    
+
         
         ## ================== template ==================== ##        
         self.template_line = self.template_line + part1 + target + OARs + part3 + part4 + part5
@@ -1875,24 +1900,22 @@ class Initialization_MON511(HYP_Editor_MONACO511):
     '''
     
     def __init__(self,pt_id,
-                      delivery_method,
+                      delivery,
                       fx,
                       prep_dose,
                       grid_dose,
                       path,
                       protocol_xlsx,
-                      CP_number,
-                      arc_option):
+                      sequencing):
         import os
         
         self.pt_id = pt_id
-        self.delivery_method = delivery_method
+        self.delivery_method = delivery
         self.fx = fx
         self.prep_dose = prep_dose
         self.grid_dose = grid_dose
         self.protocol_xlsx = protocol_xlsx
-        self.CP_number = CP_number
-        self.arc_option = arc_option
+        self.sequencing_par= sequencing
 
         # original template folder and file path
         hyp_element_path = os.path.join(path,'hyp_element511.txt')
@@ -1938,8 +1961,7 @@ class Initialization_MON511(HYP_Editor_MONACO511):
                                                                              fractions=self.fx,
                                                                              prescription_dose=self.prep_dose,
                                                                              delivery_type=self.delivery_method,
-                                                                             CP_number=self.CP_number,
-                                                                             arc_option=self.arc_option)
+                                                                             sequencing = self.sequencing_par)
         elif LABEL == 'Prostate':
             self.updated_template = HYP_Editor_MONACO511.hyp_solution_Prostate_V1(self,
                                                              grid=self.grid_dose,
