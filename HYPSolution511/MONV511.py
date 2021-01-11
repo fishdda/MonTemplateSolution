@@ -1,4 +1,5 @@
 def MONV511_UI(Mode):
+
     import streamlit as st
     import pandas as pd
     import time
@@ -138,12 +139,15 @@ def MONV511_UI(Mode):
             st.write('The current number is ', number2)  
             Parameters_To_Template['Min. Segment Width(cm)'] = number2
         
-        elif option == 'Step&Shoot':
+        elif option == 'dMLC':
 
+            CP_number_per_beam = st.number_input('Max. # of Control Points Per Beam:')
+            st.write('The current number is ', CP_number_per_beam)
+            # Parameters_To_Template['CP_number per Arc'] = CP_number
+
+            Min_Seg_Width = st.number_input('Min. Segment Width (cm):')
+            st.write('The current number is ', Min_Seg_Width)
             
-
-
-
     ## ====Generate Monaco Plan Template==== ## 
     st.header('Click to Batch Generation of Monaco Plan Template')
 
