@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import time
-import pydicom 
+# import pydicom 
 import os
 from MONV511 import MONV511_UI
 from MONV559b import MONV559b_UI
