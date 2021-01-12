@@ -3,7 +3,7 @@ def MONV511_UI(Mode):
     import streamlit as st
     import pandas as pd
     import time
-    import pydicom 
+    # import pydicom 
     import os
     import base64
 
