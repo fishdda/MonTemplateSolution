@@ -7,7 +7,7 @@
     <DoseNormSettings>
       <NormSettings>
         <Type>0</Type>
-        <RefValue>7000</RefValue>
+        <RefValue>7380</RefValue>
         <RefPercent>100</RefPercent>
         <Default>true</Default>
         <Mode>0</Mode>

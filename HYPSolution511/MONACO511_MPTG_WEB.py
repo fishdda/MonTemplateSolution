@@ -1438,7 +1438,7 @@ class HYP_Editor_MONACO511:
                     part5[i] = ''.join(['!MAXNARCS    ',str(int(sequencing[delivery_type]['Arc Numbers'])),'\n'])
 
                 elif 'MINWIDTH'  in item:
-                    part5[i] = ''.join(['!MINWIDTH    ',str(int(sequencing[delivery_type]['Min. Segment Width(cm)'])),'\n'])
+                    part5[i] = ''.join(['!MINWIDTH    ',str(int(10*sequencing[delivery_type]['Min. Segment Width(cm)'])),'\n'])
 
         elif delivery_type == 'dMLC':
             
@@ -1461,7 +1461,7 @@ class HYP_Editor_MONACO511:
                     part5[i] = ''.join(['!DMLCMAXCP    ',str(float(sequencing[delivery_type]['CP_number_per_beam'])),'\n'])
 
                 elif 'MINWIDTH'  in item:
-                    part5[i] = ''.join(['!MINWIDTH    ',str(int(sequencing[delivery_type]['Min_Seg_Width'])),'\n'])
+                    part5[i] = ''.join(['!MINWIDTH    ',str(int(10*sequencing[delivery_type]['Min_Seg_Width'])),'\n'])
 
                 elif 'MAXSWEEPEFFICIENCY' in item:
                     part5[i] = ''.join(['!MAXSWEEPEFFICIENCY    ',str(int(sequencing[delivery_type]["Max_Sweep_Efficiency"])),'\n'])

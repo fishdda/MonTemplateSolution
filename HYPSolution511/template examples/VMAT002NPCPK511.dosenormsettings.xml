@@ -10,63 +10,63 @@
       <DoseSurfaceParametersList>
         <DoseSurfaceParameter>
           <Isodose>2000</Isodose>
-          <Style>1</Style>
+          <Style>0</Style>
           <Color>8585216</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
           <Isodose>3000</Isodose>
-          <Style>1</Style>
+          <Style>0</Style>
           <Color>15466496</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>4000</Isodose>
-          <Style>1</Style>
+          <Isodose>3800</Isodose>
+          <Style>0</Style>
           <Color>16733696</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>4500</Isodose>
-          <Style>1</Style>
+          <Isodose>4200</Isodose>
+          <Style>0</Style>
           <Color>16761600</Color>
-          <LineThickness>0</LineThickness>
+          <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>5000</Isodose>
-          <Style>1</Style>
+          <Isodose>4600</Isodose>
+          <Style>0</Style>
           <Color>13827885</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>5400</Isodose>
-          <Style>1</Style>
+          <Isodose>5000</Isodose>
+          <Style>0</Style>
           <Color>6684569</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>6300</Isodose>
-          <Style>1</Style>
+          <Isodose>5400</Isodose>
+          <Style>0</Style>
           <Color>64511</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>6600</Isodose>
-          <Style>1</Style>
+          <Isodose>5800</Isodose>
+          <Style>0</Style>
           <Color>37631</Color>
-          <LineThickness>0</LineThickness>
+          <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>7000</Isodose>
-          <Style>1</Style>
+          <Isodose>6160</Isodose>
+          <Style>0</Style>
           <Color>9727</Color>
           <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
         <DoseSurfaceParameter>
-          <Isodose>7400</Isodose>
-          <Style>1</Style>
+          <Isodose>6500</Isodose>
+          <Style>0</Style>
           <Color>120</Color>
-          <LineThickness>0</LineThickness>
+          <LineThickness>1</LineThickness>
         </DoseSurfaceParameter>
       </DoseSurfaceParametersList>
       <DoseStructureParametersList>
@@ -81,7 +81,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Brainstem</StructureName>
+          <StructureName>A.D L</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -91,7 +91,27 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>CTV HIGH RISK</StructureName>
+          <StructureName>A.D R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>BODY(Unsp.Tiss.)</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Brain</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -101,7 +121,17 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>CTV LOW RISK</StructureName>
+          <StructureName>Brain Stem</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>CTV1</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -111,7 +141,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>CTV NODE</StructureName>
+          <StructureName>Eye L</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -121,7 +151,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Chiasm</StructureName>
+          <StructureName>Eye R</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -131,7 +161,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>GTV</StructureName>
+          <StructureName>GTV nd</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -141,7 +171,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>L COCHLEA</StructureName>
+          <StructureName>GTV nx</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -151,37 +181,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>L Lung</StructureName>
-          <CursorType>0</CursorType>
-          <MinCursor />
-          <MaxCursor />
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>LT Eye</StructureName>
-          <CursorType>0</CursorType>
-          <MinCursor />
-          <MaxCursor />
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>LT Optic Nerve</StructureName>
-          <CursorType>0</CursorType>
-          <MinCursor />
-          <MaxCursor />
-          <Enabled>-1</Enabled>
-          <HighDoseRef>5</HighDoseRef>
-          <MinDoseRef>95</MinDoseRef>
-          <PrescribedDose>-1</PrescribedDose>
-        </DoseStructureParameter>
-        <DoseStructureParameter>
-          <StructureName>LT Parotid</StructureName>
+          <StructureName>GTV rpn</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -201,7 +201,77 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
+          <StructureName>Lens L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Lens R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Lung</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
           <StructureName>Mandible</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Marker</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Optical Chiasm</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Optical Nerve L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Optical Nerve R</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -221,7 +291,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>PTV HIGH RISK</StructureName>
+          <StructureName>Overlap_OralCavity_PCTV</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -231,7 +301,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>PTV LOW RISK</StructureName>
+          <StructureName>PCTV</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -241,7 +311,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>PTV for GTV</StructureName>
+          <StructureName>PCTV1</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -251,7 +321,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>R COCHLEA</StructureName>
+          <StructureName>PGTVnd</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -261,7 +331,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>R Lung</StructureName>
+          <StructureName>PGTVnx</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -271,7 +341,69 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>RT Eye</StructureName>
+          <StructureName>PGTVrpn</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor>
+            <Dose>6160</Dose>
+          </MaxCursor>
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>7000</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PRVlens_L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PRVlens_R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Parotid L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Parotid R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Pituitary</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>PostAvoid</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -281,7 +413,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>RT Optic Nerve</StructureName>
+          <StructureName>R0</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -291,7 +423,57 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>RT Parotid</StructureName>
+          <StructureName>R2</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>R3</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>R4</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>R5</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>R6</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>-1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>R7</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -305,13 +487,53 @@
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
-          <Enabled>-1</Enabled>
+          <Enabled>1</Enabled>
           <HighDoseRef>5</HighDoseRef>
           <MinDoseRef>95</MinDoseRef>
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>Temporal Lobes</StructureName>
+          <StructureName>T.Joint L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>T.Joint R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>T.Lobe L</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>T.Lobe R</StructureName>
+          <CursorType>0</CursorType>
+          <MinCursor />
+          <MaxCursor />
+          <Enabled>1</Enabled>
+          <HighDoseRef>5</HighDoseRef>
+          <MinDoseRef>95</MinDoseRef>
+          <PrescribedDose>-1</PrescribedDose>
+        </DoseStructureParameter>
+        <DoseStructureParameter>
+          <StructureName>Trachea</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -321,7 +543,7 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
         <DoseStructureParameter>
-          <StructureName>patient(Unsp.Tiss.)</StructureName>
+          <StructureName>TracheaAvoid</StructureName>
           <CursorType>0</CursorType>
           <MinCursor />
           <MaxCursor />
@@ -331,11 +553,11 @@
           <PrescribedDose>-1</PrescribedDose>
         </DoseStructureParameter>
       </DoseStructureParametersList>
-      <CurrentStructure> </CurrentStructure>
+      <CurrentStructure>PGTVnx</CurrentStructure>
       <Thickness>5</Thickness>
       <IsolinesEnabled>false</IsolinesEnabled>
       <MinColorWashDose>2000</MinColorWashDose>
-      <MaxColorWashDose>7400</MaxColorWashDose>
+      <MaxColorWashDose>6500</MaxColorWashDose>
       <DefaultSurfaceDoses>false</DefaultSurfaceDoses>
       <DefaultColorWashDoses>true</DefaultColorWashDoses>
       <IsodoseTemplateName>Default</IsodoseTemplateName>

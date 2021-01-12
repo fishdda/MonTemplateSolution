@@ -1,36 +1,45 @@
-000310b6
+000510b6
 !LAYERING
-    PTV70:T
-    PTV63:T
-    PTV54:T
-    Brainstem:T
-    SpinalCord_C:T
+    PGTVrpn:T
+    PGTVnx:T
+    PGTVnd:T
+    PCTV:T
+    Optical Chiasm:T
+    Brain Stem:T
+    Spinal Cord:T
+    Optical Nerve L:T
+    Optical Nerve R:T
+    PRVlens_L:T
+    PRVlens_R:T
+    Eye L:T
+    Eye R:T
+    Pituitary:T
+    Brain:T
+    Parotid L:T
+    Parotid R:T
+    T.Joint L:T
+    T.Joint R:T
+    T.Lobe L:T
+    T.Lobe R:T
     Larynx:T
-    ParotidGland_L:T
-    ParotidGland_R:T
-    Lens_L:T
-    Lens_R:T
-    Eyeball_L:T
-    Eyeball_R:T
+    A.D R:T
+    A.D L:T
     Mandible:T
-    Temporal Lobes:T
-    OpticNerve_L:T
-    OpticNerve_R:T
-    OpticChiasm:T
-    Cochlea_L:T
-    Cochlea_R:T
     Oral Cavity:T
-    patient
+    TracheaAvoid:T
+    PostAvoid:T
+    Lung:T
+    BODY
 !END
 !VOIDEF
-    name=PTV70
+    name=PGTVrpn
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
         type=qp
         usedensity=0
         effectweighting=0
-        totalvolume=0
+        totalvolume=1
         sanesurfacedose=0
         multicriterial=0
         relaxfirst=0
@@ -41,146 +50,11 @@
         celldensity=0
         refdose=0
         functreserve=50
-        refvolume=0.97000000000000008
+        refvolume=0.95000000000000007
         exponent=1
         thresholddose=1
-        isoconstraint=70
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-    !COSTFUNCTION
-        type=o_q
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=71
-        isoconstraint=1.9000000000000001
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.01
-    !END
-!END
-!VOIDEF
-    name=PTV63
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=qp
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0.98000000000000009
-        exponent=1
-        thresholddose=1
-        isoconstraint=63
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-    !COSTFUNCTION
-        type=o_q
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=70
-        isoconstraint=0.40000000000000002
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.64734782443947869
-    !END
-    !COSTFUNCTION
-        type=o_q
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=3
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=64
-        isoconstraint=2.1000000000000001
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.01
-    !END
-!END
-!VOIDEF
-    name=PTV54
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=qp
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=1
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0.98000000000000009
-        exponent=1
-        thresholddose=1
-        isoconstraint=54
-        isoeffect=0
+        isoconstraint=61.600000000000001
+        isoeffect=62.143250406543729
         relativeimpact=0
         status=1
         manual=0
@@ -204,12 +78,177 @@
         refvolume=0
         exponent=1
         thresholddose=63
-        isoconstraint=1
-        isoeffect=0
+        isoconstraint=0.5
+        isoeffect=0.16618839310263389
+        relativeimpact=0
+        status=1
+        manual=1
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=PGTVnx
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=qp
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0.98000000000000009
+        exponent=1
+        thresholddose=1
+        isoconstraint=61.600000000000001
+        isoeffect=62.031053047315879
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=1
+    !END
+    !COSTFUNCTION
+        type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=63
+        isoconstraint=0.5
+        isoeffect=0.49835053088315573
+        relativeimpact=0.47235358417998047
+        status=1
+        manual=0
+        weight=0.14196017753802101
+    !END
+!END
+!VOIDEF
+    name=PGTVnd
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=qp
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0.98000000000000009
+        exponent=1
+        thresholddose=1
+        isoconstraint=59.359999999999999
+        isoeffect=59.835003950790352
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=1
+    !END
+    !COSTFUNCTION
+        type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=1
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=61
+        isoconstraint=0.5
+        isoeffect=0.37040027519268215
         relativeimpact=0
         status=1
         manual=0
         weight=0.01
+    !END
+!END
+!VOIDEF
+    name=PCTV
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=qp
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0.94999999999999996
+        exponent=1
+        thresholddose=1
+        isoconstraint=50.399999999999999
+        isoeffect=50.559491508640768
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=1
+    !END
+    !COSTFUNCTION
+        type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=59.359999999999999
+        isoconstraint=0.5
+        isoeffect=0.50234187640875416
+        relativeimpact=0.85914130693221136
+        status=1
+        manual=0
+        weight=1.2199430336518435
     !END
     !COSTFUNCTION
         type=o_q
@@ -228,9 +267,64 @@
         functreserve=50
         refvolume=0
         exponent=1
-        thresholddose=55
-        isoconstraint=4.5
-        isoeffect=0
+        thresholddose=54
+        isoconstraint=1
+        isoeffect=0.68005662048605753
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+    !COSTFUNCTION
+        type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=6
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=50
+        isoconstraint=2
+        isoeffect=1.9679693331484378
+        relativeimpact=0.84829845857239439
+        status=1
+        manual=0
+        weight=1.1962843933965748
+    !END
+!END
+!VOIDEF
+    name=Optical Chiasm
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=43
+        isoeffect=44.986869812011719
         relativeimpact=0
         status=1
         manual=0
@@ -238,7 +332,187 @@
     !END
 !END
 !VOIDEF
-    name=Brainstem
+    name=Brain Stem
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=43
+        isoeffect=44.217597961425781
+        relativeimpact=0.19859457225877139
+        status=1
+        manual=0
+        weight=0.031877462607225154
+    !END
+!END
+!VOIDEF
+    name=Spinal Cord
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=37
+        isoeffect=36.547019958496094
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Optical Nerve L
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=41
+        isoeffect=25.036026000976563
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Optical Nerve R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=41
+        isoeffect=41.288681030273438
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=PRVlens_L
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=6
+        isoeffect=6.0194511413574219
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=PRVlens_R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=6
+        isoeffect=6.0627689361572266
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Eye L
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
@@ -257,25 +531,25 @@
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=16
+        exponent=14
         thresholddose=1
-        isoconstraint=45
-        isoeffect=0
+        isoconstraint=25
+        isoeffect=21.674495836850731
         relativeimpact=0
         status=1
         manual=0
-        weight=1.7357987579942447
+        weight=0.01
     !END
 !END
 !VOIDEF
-    name=SpinalCord_C
+    name=Eye R
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
         type=se
         usedensity=0
         effectweighting=0
-        totalvolume=1
+        totalvolume=0
         sanesurfacedose=0
         multicriterial=0
         relaxfirst=0
@@ -287,10 +561,300 @@
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=16
+        exponent=12
         thresholddose=1
-        isoconstraint=31
-        isoeffect=0
+        isoconstraint=25
+        isoeffect=20.275457946852146
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Pituitary
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=40
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=50.544234531789613
+        relativeimpact=0.45665532505375606
+        status=1
+        manual=0
+        weight=0.12081447604937905
+    !END
+!END
+!VOIDEF
+    name=Brain
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=12
+        thresholddose=1
+        isoconstraint=37
+        isoeffect=32.37059846822752
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Parotid L
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=30
+        isoeffect=30.776697335875497
+        relativeimpact=0.969087452103359
+        status=1
+        manual=0
+        weight=2.2217165660106275
+    !END
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=12
+        thresholddose=1
+        isoconstraint=32.759999999999998
+        isoeffect=30.068202184540503
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=Parotid R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=30
+        isoeffect=30.725591605634307
+        relativeimpact=1
+        status=1
+        manual=0
+        weight=2.646325528698553
+    !END
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=12
+        thresholddose=1
+        isoconstraint=32.759999999999998
+        isoeffect=28.828793623916425
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=T.Joint L
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=38
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=49.222137569816262
+        relativeimpact=0.51746365400892358
+        status=1
+        manual=0
+        weight=0.18442581437167474
+    !END
+!END
+!VOIDEF
+    name=T.Joint R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=38
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=48.308232450030495
+        relativeimpact=0.56046009724398205
+        status=1
+        manual=0
+        weight=0.23898820524944289
+    !END
+!END
+!VOIDEF
+    name=T.Lobe L
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=38
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=15.854816621469791
+        relativeimpact=0
+        status=1
+        manual=0
+        weight=0.01
+    !END
+!END
+!VOIDEF
+    name=T.Lobe R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=38
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=16.59778734699373
         relativeimpact=0
         status=1
         manual=0
@@ -310,286 +874,21 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=0
+        shrinkmargin=3
         alpha=0
         beta_alpha=0
         celldensity=0
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=1
+        exponent=12
         thresholddose=1
-        isoconstraint=45
-        isoeffect=0
-        relativeimpact=0
+        isoconstraint=37
+        isoeffect=36.922947123286825
+        relativeimpact=0.33094706220697773
         status=1
         manual=0
-        weight=125.84190204896061
-    !END
-!END
-!VOIDEF
-    name=ParotidGland_L
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=26
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=172.25256436811287
-    !END
-!END
-!VOIDEF
-    name=ParotidGland_R
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=26
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=133.12829638473767
-    !END
-!END
-!VOIDEF
-    name=Lens_L
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=8
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-!END
-!VOIDEF
-    name=Lens_R
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=8
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-!END
-!VOIDEF
-    name=Eyeball_L
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=48
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.077676797587512808
-    !END
-!END
-!VOIDEF
-    name=Eyeball_R
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=48
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.41337360816654189
-    !END
-!END
-!VOIDEF
-    name=Mandible
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=1
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=75
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.01
-    !END
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=10
-        thresholddose=1
-        isoconstraint=46
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=0.084530862784287147
-    !END
-!END
-!VOIDEF
-    name=Temporal Lobes
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=mxd
-        usedensity=0
-        effectweighting=0
-        totalvolume=1
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=0
-        functreserve=50
-        refvolume=0
-        exponent=1
-        thresholddose=1
-        isoconstraint=64
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=7.8688524392619934
+        weight=0.065459482340225819
     !END
     !COSTFUNCTION
         type=se
@@ -607,10 +906,40 @@
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=8
+        exponent=1
         thresholddose=1
-        isoconstraint=46
-        isoeffect=0
+        isoconstraint=35
+        isoeffect=34.835422690674982
+        relativeimpact=0.40257012331034775
+        status=1
+        manual=0
+        weight=0.10000000000000001
+    !END
+!END
+!VOIDEF
+    name=A.D R
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=pa
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=38
+        functreserve=50
+        refvolume=0
+        exponent=4
+        thresholddose=1
+        isoconstraint=50
+        isoeffect=38.138313717400017
         relativeimpact=0
         status=1
         manual=0
@@ -618,11 +947,11 @@
     !END
 !END
 !VOIDEF
-    name=OpticNerve_L
+    name=A.D L
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
-        type=se
+        type=pa
         usedensity=0
         effectweighting=0
         totalvolume=0
@@ -634,111 +963,21 @@
         alpha=0
         beta_alpha=0
         celldensity=0
-        refdose=100
+        refdose=38
         functreserve=50
         refvolume=0
-        exponent=16
-        thresholddose=1
-        isoconstraint=48
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-!END
-!VOIDEF
-    name=OpticNerve_R
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=1
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=14
-        thresholddose=1
-        isoconstraint=48
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-!END
-!VOIDEF
-    name=OpticChiasm
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=14
-        thresholddose=1
-        isoconstraint=48
-        isoeffect=0
-        relativeimpact=0
-        status=1
-        manual=0
-        weight=1
-    !END
-!END
-!VOIDEF
-    name=Cochlea_L
-    storenodose=0
-    conformalavoidance=0
-    !COSTFUNCTION
-        type=se
-        usedensity=0
-        effectweighting=0
-        totalvolume=0
-        sanesurfacedose=0
-        multicriterial=0
-        relaxfirst=0
-        usebiasdose=1
-        shrinkmargin=0
-        alpha=0
-        beta_alpha=0
-        celldensity=0
-        refdose=100
-        functreserve=50
-        refvolume=0
-        exponent=12
+        exponent=4
         thresholddose=1
         isoconstraint=50
-        isoeffect=0
-        relativeimpact=0
+        isoeffect=44.253423155437389
+        relativeimpact=0.15925456169008489
         status=1
         manual=0
-        weight=1
+        weight=0.027378139749936525
     !END
 !END
 !VOIDEF
-    name=Cochlea_R
+    name=Mandible
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
@@ -750,21 +989,46 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=0
+        shrinkmargin=3
         alpha=0
         beta_alpha=0
         celldensity=0
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=12
+        exponent=1
         thresholddose=1
-        isoconstraint=50
-        isoeffect=0
+        isoconstraint=40
+        isoeffect=38.392854424519257
+        relativeimpact=0.32058614761095161
+        status=1
+        manual=0
+        weight=0.062731067016283504
+    !END
+    !COSTFUNCTION
+        type=o_q
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=50
+        isoconstraint=0.25
+        isoeffect=0.047710538121340004
         relativeimpact=0
         status=1
         manual=0
-        weight=1
+        weight=0.01
     !END
 !END
 !VOIDEF
@@ -780,25 +1044,140 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=0
+        shrinkmargin=3
         alpha=0
         beta_alpha=0
         celldensity=0
         refdose=100
         functreserve=50
         refvolume=0
-        exponent=5
+        exponent=12
         thresholddose=1
-        isoconstraint=40
-        isoeffect=0
-        relativeimpact=0
+        isoconstraint=42
+        isoeffect=41.669391544633349
+        relativeimpact=0.075092569399466472
         status=1
         manual=0
-        weight=1
+        weight=0.016672636162205264
+    !END
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=40
+        isoeffect=38.297805178293672
+        relativeimpact=0.30714267548155499
+        status=1
+        manual=0
+        weight=0.058318280589642196
     !END
 !END
 !VOIDEF
-    name=patient
+    name=TracheaAvoid
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=42
+        isoeffect=42.029861450195312
+        relativeimpact=0.65885177025195207
+        status=1
+        manual=0
+        weight=0.38474085542120118
+    !END
+!END
+!VOIDEF
+    name=PostAvoid
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=mxd
+        usedensity=0
+        effectweighting=0
+        totalvolume=1
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=0
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=0
+        functreserve=50
+        refvolume=0
+        exponent=1
+        thresholddose=1
+        isoconstraint=39
+        isoeffect=39.65716552734375
+        relativeimpact=0.00060641789821306528
+        status=1
+        manual=0
+        weight=0.013809299889163216
+    !END
+!END
+!VOIDEF
+    name=Lung
+    storenodose=0
+    conformalavoidance=0
+    !COSTFUNCTION
+        type=se
+        usedensity=0
+        effectweighting=0
+        totalvolume=0
+        sanesurfacedose=0
+        multicriterial=0
+        relaxfirst=0
+        usebiasdose=1
+        shrinkmargin=3
+        alpha=0
+        beta_alpha=0
+        celldensity=0
+        refdose=100
+        functreserve=50
+        refvolume=0
+        exponent=12
+        thresholddose=1
+        isoconstraint=32
+        isoeffect=31.893396648499788
+        relativeimpact=0.34415045924453763
+        status=1
+        manual=0
+        weight=0.071518043197481257
+    !END
+!END
+!VOIDEF
+    name=BODY
     storenodose=0
     conformalavoidance=0
     !COSTFUNCTION
@@ -810,7 +1189,7 @@
         multicriterial=0
         relaxfirst=0
         usebiasdose=1
-        shrinkmargin=3
+        shrinkmargin=0
         alpha=0.25
         beta_alpha=0
         celldensity=0
@@ -818,13 +1197,13 @@
         functreserve=50
         refvolume=0
         exponent=1
-        thresholddose=54
+        thresholddose=50
         isoconstraint=0.59999999999999998
-        isoeffect=0
+        isoeffect=0.47882385968191959
         relativeimpact=0
         status=1
         manual=0
-        weight=0.014158957107195468
+        weight=0.01
     !END
     !COSTFUNCTION
         type=o_q
@@ -843,13 +1222,13 @@
         functreserve=50
         refvolume=0
         exponent=1
-        thresholddose=45
+        thresholddose=42
         isoconstraint=1
-        isoeffect=0
+        isoeffect=0.73682027574351694
         relativeimpact=0
         status=1
         manual=0
-        weight=0.012854325159235043
+        weight=0.01
     !END
     !COSTFUNCTION
         type=o_q
@@ -870,7 +1249,7 @@
         exponent=1
         thresholddose=36
         isoconstraint=2
-        isoeffect=0
+        isoeffect=1.0558116428775779
         relativeimpact=0
         status=1
         manual=0
@@ -893,9 +1272,9 @@
         functreserve=50
         refvolume=0
         exponent=1
-        thresholddose=28
+        thresholddose=30
         isoconstraint=4
-        isoeffect=0
+        isoeffect=1.489928916735062
         relativeimpact=0
         status=1
         manual=0
@@ -919,12 +1298,12 @@
         refvolume=0
         exponent=1
         thresholddose=1
-        isoconstraint=77.5
-        isoeffect=0
-        relativeimpact=0
+        isoconstraint=67
+        isoeffect=67.009269714355469
+        relativeimpact=0.4829398362914476
         status=1
         manual=0
-        weight=0.42918223161738311
+        weight=0.15993267752475213
     !END
 !END
 !DOSE_ENGINES
@@ -953,14 +1332,14 @@
         collimator=0
     !END
 !END
-!FRACTIONS    33
-!PRESCRIPTION    70
+!FRACTIONS    28
+!PRESCRIPTION    61.600000000000001
 !MINHOUNSFIELDINVOI    -200
 !MINDENSINVOI    1
 !DOSEGRIDSIZE    2.9999999999999996
 !MINFIELDSIZE    200
 !MINAREADIFFERENCE    0
-!GRADEOFSMOOTHING    Low
+!GRADEOFSMOOTHING    Medium
 !HIDELEAFGAP    0
 !SURFACEMARGIN    3
 !AUTOFLASHMARGIN    2
@@ -968,13 +1347,13 @@
 !MCVARIANCE    0.01
 !DOSETOMEDIUM    1
 !FORCEWATER    0
-!ISOCENTRE    coordinate=-10, -72, 50
+!ISOCENTRE    coordinate=3.7000000000000002, -77, -54.100000000000001
 !PARETOMODE    0
 !SHAPEOPTIMIZATION    1
 !CFSHAPEOPTIMIZATION    0
 !CONSTDOSERATE    0
 !DMLCMAXCP    30
-!VMATMAXCP    180
+!VMATMAXCP    150
 !MAXSWEEPEFFICIENCY    1
 !MINWIDTH    5
 !MAXCPFORSTATIC    250
@@ -989,3 +1368,4 @@
 !PROTON_MC_RELATIVE_DOSE_THRESHOLD    5
 !PROTON_MC_PARTICLES_PER_SPOT    10000000
 !PROTON_MC_UNCERTAINTY_PER_SPOT    1
+!PILOT_BEAMLETS    1
