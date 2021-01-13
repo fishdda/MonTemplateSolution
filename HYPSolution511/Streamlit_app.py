@@ -25,20 +25,20 @@ elif mon_option1 == 'MONV559b':
 
 st.sidebar.header('Monaco Plan Template Decode V1.0')
 
-mon_option2 = st.sidebar.radio(
+mon_option2 = st.sidebar.selectbox(
     'Monaco Selection',
     ('MONV511','MONV559b'))
 
 st.sidebar.header('Monaco Plan Template Management V1.0')
 
-mon_option3 = st.sidebar.radio(
+mon_option3 = st.sidebar.selectbox(
     'Monaco Version',
     ('MONV511','MONV559b'))
 
 
 st.sidebar.header('Monaco Plan Template Upgrade V1.0 ')
 
-mon_option4 = st.sidebar.radio(
+mon_option4 = st.sidebar.selectbox(
     'Monaco TPS Version',
     ('MONV511','MONV559b'))
 
