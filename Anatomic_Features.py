@@ -963,7 +963,7 @@ class PCA_SVR_Model:
             name_DTH = [item for item in self.DTH_Data.columns if name_DVH in item]
             if wplt == True:
                 new_path = os.path.join(self.DVH_DTH_data_path,"Fig",name_DVH+"_Fig")
-#                os.mkdir(new_path)    
+                os.mkdir(new_path)    
                 #DVH show
                 print('Figure!')
                 fig = plt.figure()
@@ -1071,14 +1071,14 @@ class PCA_SVR_Model:
                                           columns = ["PC_DTH"+str(i+1) for i in range(num_components)])
 
         # mark the index of the case
-#        principal_DVH_DATA.index = pt_id
-#        principal_DTH_DATA.index = pt_id
+        #        principal_DVH_DATA.index = pt_id
+        #        principal_DTH_DATA.index = pt_id
         self.principal_DVH_DATA.index = self.DVH_Data.columns
         
-#        self.principal_DTH_DATA.index = self.DTH_Data.columns
+        #        self.principal_DTH_DATA.index = self.DTH_Data.columns
         self.principal_DTH_DATA.index = [item.split('__')[0] for item in self.DTH_Data.columns]
         
-#        return self.principal_DTH_DATA, self.principal_DVH_DATA
+        #        return self.principal_DTH_DATA, self.principal_DVH_DATA
 
     def Training_VS_Validation_Set(self,rtss_Volume_path,structure_name):
         '''
@@ -1100,8 +1100,8 @@ class PCA_SVR_Model:
         SS_volume = ss_volume.iloc[:,1:]
         SS_volume.index = indexes
         
-#        name_index = self.principal_DVH_DATA.index
-#        SS_volume = SS_volume[name_index]
+        #        name_index = self.principal_DVH_DATA.index
+        #        SS_volume = SS_volume[name_index]
         self.Target_name = 'PTV_Combinations'
         self.SS_volume = SS_volume[[structure_name,self.Target_name]]
         # combine PC and SS_Volume
@@ -1125,7 +1125,7 @@ class PCA_SVR_Model:
         self.Valid_DTH_DATA_ = pd.concat([self.Valid_DTH_DATA,self.Valid_Volume],axis=1,sort=True)
         
         
-#        return self.Train_DVH_DATA,self.Train_DTH_DATA_,self.Valid_DVH_DATA,self.Valid_DTH_DATA_
+       #        return self.Train_DVH_DATA,self.Train_DTH_DATA_,self.Valid_DVH_DATA,self.Valid_DTH_DATA_
 
     def SVR_Correlation_Single_output_version(self,epsilon_1,epsilon_2,epsilon_3,epsilon_4,epsilon_5):
 
@@ -1152,9 +1152,9 @@ class PCA_SVR_Model:
         
         
         ######### Train model Part ###########################################
-#        # Principal Component 1 #
-#        PC1 = pd.DataFrame(self.Train_DVH_DATA['PC_DVH1'])
-#        Y1 = sc_y1.fit_transform(PC1) # standardization
+        #        # Principal Component 1 #
+        #        PC1 = pd.DataFrame(self.Train_DVH_DATA['PC_DVH1'])
+        #        Y1 = sc_y1.fit_transform(PC1) # standardization
         abs_mean_error = {'PC1':[],'PC2':[],'PC3':[],'PC4':[],'PC5':[]}
         
         #PC1
@@ -1361,7 +1361,7 @@ class SDAE_FCNN_Model:
           file_name_DTH: "DTH_FurtherCleanedUp_ForSDAE.csv"
         '''
         import pandas as pd
-#        import numpy as np
+
         import os
         import random
         from sklearn.preprocessing import StandardScaler
@@ -1381,29 +1381,14 @@ class SDAE_FCNN_Model:
 
         self.Validat_index_DVH = random.sample(list(self.DVH_Data.columns),5)
         
-#        self.Validat_index_DVH = random.sample(list(self.DVH_Data.columns),5)
-        # Validat_index_DVH = ['HNSCC-01-0161_rtss','HNSCC-01-0075_rtss','HNSCC-01-0053_rtss','HNSCC-01-0045']
-#        self.Validat_index_DTH = [item for item in self.DTH_Data.columns for jtem in self.Validat_index_DVH if jtem in item]
 
-#        self.Valid_DVH_DATA = self.DVH_Data[self.Validat_index_DVH]
-#        self.Valid_DTH_DATA = self.DTH_Data[self.Validat_index_DTH]
-#
-#        self.Train_DVH_DATA = self.DVH_Data.drop(self.Validat_index_DVH,axis=1)
-#        self.Train_DTH_DATA = self.DTH_Data.drop(self.Validat_index_DTH,axis=1)
         
         ## compress dimensions from real to 100 and do data standardization
         self.SC1 = StandardScaler()
         self.DVH_Data_ = self.SC1.fit_transform(self.DVH_Data.iloc[::compress,:].T)
         self.SC2 = StandardScaler()
         self.DTH_Data_ = self.SC2.fit_transform(self.DTH_Data.iloc[::compress,:].T)
-#        self.SC3 = StandardScaler()
-#        self.Train_DVH_DATA_ = self.SC3.fit_transform(self.Train_DVH_DATA.iloc[::compress,:].T)
-#        self.SC4 = StandardScaler()
-#        self.Train_DTH_DATA_ = self.SC4.fit_transform(self.Train_DTH_DATA.iloc[::compress,:].T)
-#        self.SC5 = StandardScaler()
-#        self.Valid_DVH_DATA_ = self.SC5.fit_transform(self.Valid_DVH_DATA.iloc[::compress,:].T)
-#        self.SC6 = StandardScaler()
-#        self.Valid_DTH_DATA_ = self.SC6.fit_transform(self.Valid_DTH_DATA.iloc[::compress,:].T)
+
         self.SC3 = StandardScaler()
         test_data = self.DVH_Data[self.Validat_index_DVH]
         self.DVH_DATA_train = self.SC3.fit_transform(test_data.iloc[::compress,:].T)
@@ -1421,16 +1406,15 @@ class SDAE_FCNN_Model:
         import tensorflow.keras as keras
         from tensorflow.keras import layers
         import pandas as pd
-#        from tensorflow.keras.callbacks import TensorBoard
 
         if type == "DVH":
             input_data_type = self.DVH_Data_
             x_train = self.DVH_Data_
-#            x_test = self.Valid_DVH_DATA_
+
         else:
             input_data_type = self.DTH_Data_
             x_train = self.DTH_Data_
-#            x_test = self.Valid_DTH_DATA_
+
 
         # This is the size of our encoded representations
         encoding_dim = 10 # to compress the data to 5 dimensions
@@ -1488,9 +1472,9 @@ class SDAE_FCNN_Model:
 
 
         self.compressed_train_data = self.encoder.predict(x_train)  ## dimension 5
-#        self.compressed_test_data = self.encoder.predict(x_test)
+
         self.decoder_train_data = self.autoencoder.predict(x_train)  ## original dimensions
-#        self.decoder_test_data = self.autoencoder.predict(x_test)
+
 
         self.compressed_train_data = pd.DataFrame(self.compressed_train_data,index = self.DVH_Data.columns)
         self.decoder_train_data    = pd.DataFrame(self.decoder_train_data,index = self.DVH_Data.columns)
@@ -1501,12 +1485,11 @@ class SDAE_FCNN_Model:
         '''
            This function was used for data preparation for 1DCNN
         '''
-        import os
-#        import random 
+        import os 
         import pandas as pd
 
 
-#        self.Validat_index_ = random.sample(list(self.DVH_Data.columns),5)
+
         # compress = 80
         strt_name = ["Parotid_L","Parotid_R","SpinalCord","BrainStem"]
         self.SC_Store,self.DATA_Prepared = {},{}
@@ -1514,13 +1497,12 @@ class SDAE_FCNN_Model:
         ## Prepare the training data (ParotidL4,ParotidR4,BrainStem4,SpinalCord4,Vol_ParotidL,Vol_ParotidR,Vol_BS,Vol_SC)
         ## Input data should be matrix has dimensions: (patient_num, 20)
         ## output data should be matrix has dimensions: (patient_num, 5)
-#        self.Validat_index_DVH = random.sample(list(self.DVH_Data.columns),5)
+
         self.Validat_index_DTH = [item for item in self.DTH_Data.columns for jtem in self.Validat_index_DVH if jtem in item]
         for name in strt_name:
             S1,S2,S3 = self.data_clean_preparation(compress,
                                                 name+"_DVH_FurtherCleanedUp_ForSDAE.csv",
                                                 name+"_DTH_FurtherCleanedUp_ForSDAE.csv")
-#            self.SC_Store[name] = {"S1":S1,"S2":S2,"S3":S3}
             if name == self.strt_name:
                 
                 compressed_data_DTH,decoder_data_DTH = self.SDAE_Compression("DTH",epochs)   # to compress data firstly
@@ -1653,9 +1635,7 @@ class SDAE_FCNN_Model:
           file_name_DTH: "DTH_FurtherCleanedUp_ForSDAE.csv"
         '''
         import pandas as pd
-#        import numpy as np
         import os
-#        import random
         from sklearn.preprocessing import StandardScaler
 
         # read data into RAM
@@ -1671,29 +1651,6 @@ class SDAE_FCNN_Model:
         self.DVH_Data.index = DVH_index
         self.DTH_Data.index = DTH_index
 
-#        self.Validat_index_DVH = random.sample(list(self.DVH_Data.columns),5)
-        # Validat_index_DVH = ['HNSCC-01-0161_rtss','HNSCC-01-0075_rtss','HNSCC-01-0053_rtss','HNSCC-01-0045']
-#        self.Validat_index_DTH = [item for item in self.DTH_Data.columns for jtem in self.Validat_index_DVH if jtem in item]
-
-#        self.Valid_DVH_DATA = self.DVH_Data[self.Validat_index_DVH]
-#        self.Valid_DTH_DATA = self.DTH_Data[self.Validat_index_DTH]
-#
-#        self.Train_DVH_DATA = self.DVH_Data.drop(self.Validat_index_DVH,axis=1)
-#        self.Train_DTH_DATA = self.DTH_Data.drop(self.Validat_index_DTH,axis=1)
-        
-        ## compress dimensions from real to 100 and do data standardization
-#        self.SC1 = StandardScaler()
-#        self.DVH_Data_ = self.SC1.fit_transform(self.DVH_Data.iloc[::compress,:].T)
-#        self.SC2 = StandardScaler()
-#        self.DTH_Data_ = self.SC2.fit_transform(self.DTH_Data.iloc[::compress,:].T)
-#        self.SC3 = StandardScaler()
-#        self.Train_DVH_DATA_ = self.SC3.fit_transform(self.Train_DVH_DATA.iloc[::compress,:].T)
-#        self.SC4 = StandardScaler()
-#        self.Train_DTH_DATA_ = self.SC4.fit_transform(self.Train_DTH_DATA.iloc[::compress,:].T)
-#        self.SC5 = StandardScaler()
-#        self.Valid_DVH_DATA_ = self.SC5.fit_transform(self.Valid_DVH_DATA.iloc[::compress,:].T)
-#        self.SC6 = StandardScaler()
-#        self.Valid_DTH_DATA_ = self.SC6.fit_transform(self.Valid_DTH_DATA.iloc[::compress,:].T)
         SC3 = StandardScaler()
         test_data = self.DVH_Data[self.Validat_index_DVH]
         self.DVH_DATA_train = SC3.fit_transform(test_data.iloc[::compress,:].T)
@@ -1703,8 +1660,7 @@ class SDAE_FCNN_Model:
         decoder_predict_y = pd.DataFrame(decoder_predict_y, index = self.Validat_index_DVH,columns=test_data.iloc[::compress,:].index)
     
         return decoder_predict_y
-
-        
+      
 
     def DVH_Reconstruct(self,strt_name):
         '''
@@ -1716,24 +1672,20 @@ class SDAE_FCNN_Model:
            e.g. for self.y_test, it should firstly, inverse_standardization
            and then also decoder to DVH data.
         '''
-#        import pandas as pd
-#        from sklearn.preprocessing import StandardScaler
         compress = 100
         
         ## inverse standardization of data
         predict_y_ = self.test_y_SC.inverse_transform(self.predict_y)
-#        test_y_    = self.test_y_SC.inverse_transform(self.y_test)
+
         
         ## decode the data for DVH evaluation
         decoder_predict_y = self.decoder_machine[strt_name].predict(predict_y_)
-#        decoder_test_y    = self.decoder_machine[strt_name].predict(test_y_)
+
 
                 
         ## inverse standardization
         decoder_predict_y_ = self.data_clean_preparation_inverse(compress,strt_name+"_DVH_FurtherCleanedUp_ForSDAE.csv",
                                                 strt_name+"_DTH_FurtherCleanedUp_ForSDAE.csv",decoder_predict_y)
-#        decoder_test_y_ = self.data_clean_preparation_inverse(compress,strt_name+"_DVH_FurtherCleanedUp_ForSDAE.csv",
-#                                                strt_name+"_DTH_FurtherCleanedUp_ForSDAE.csv",decoder_test_y)
 
 
         
