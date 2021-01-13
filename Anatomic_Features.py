@@ -262,10 +262,6 @@ class Anatomy_Features:
 
         return y_new
 
-
-
-
-
 class Standard_Tools:
     def __init__(self,data_folder,input_data_path,ptv_std_name):
         self.data_folder = data_folder
@@ -1314,7 +1310,7 @@ class PCA_SVR_Model:
            This script was used for reconstruct the DVH from the predicted 
            DVH principle components.
         '''
-#        from sklearn.preprocessing import StandardScaler
+        #        from sklearn.preprocessing import StandardScaler
         import numpy as np
         import pandas as pd
         # to list the validated DVH 

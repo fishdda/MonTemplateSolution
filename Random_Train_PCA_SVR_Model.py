@@ -39,8 +39,6 @@ y_test_pd, y_pred_pd = ML_Model.SVR_Correlation_Single_output_version(epsilon_1,
 #BackData = ML_Model.SC_DVH.inverse_transform(np.dot(ML_Model.principalComponents_DVH,ML_Model.PCA_DVH.components_))
 
 
-
-
 DVH_Valid_Pred, DVH_Valid_Truth = ML_Model.DVH_Reconstruct()
 
 
@@ -81,8 +79,6 @@ plt.title('DVH_'+strt_name)
 plt.grid(b=True)
 plt.savefig(name[2] + "_DVH.tif",dpi=200, bbox_inches='tight')
 plt.show()
-
-
 
 ## plot the data distribution
 SS = ML_Model.DVH_Data.T

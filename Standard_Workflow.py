@@ -9,7 +9,7 @@ ptv_name = "E:/NBIA_HNSCC_DATA/PTVInformationStatistics_Clean.xlsx"
 Y = Standard_Tools(data_folder,input_data_path,ptv_name)
 # Y.Rename_STRTNAME_in_rtssdcm()
 
-## Step 2 ##
+## Step 2 ## 
 # To move all the rtss data and rtdose data to lonely folders
 rtss_folder = "E:/NBIA_HNSCC_DATA/HNSCC_rtss_PTVs/"
 rtplan_folder = "E:/NBIA_HNSCC_DATA/HNSCC_rtplan_PTVs/"
