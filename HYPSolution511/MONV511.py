@@ -12,8 +12,6 @@ def MONV511_UI(Mode):
 
     ## search if the CT and structure has already been defined
 
-
-
     st.header('Machine Learning Module')
     ## Machine Learning Tool (PCA+SVR)
     st.subheader('PCA+SVR approach')
