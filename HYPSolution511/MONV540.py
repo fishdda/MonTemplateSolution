@@ -38,7 +38,6 @@ def MONV540_UI(Mode):
         st.text(dcm.Modality)
 
     
-    
     ## ====Parameters need be entered by users==== #
 
     Parameters_To_Template = {}
