@@ -1,4 +1,3 @@
-
 ## Step 1 ##
 # Rename four structure names(parotid l&r ,spinal cord and brain stem) in data folder 
 from Anatomic_Features import Standard_Tools
