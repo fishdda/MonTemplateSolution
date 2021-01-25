@@ -75,20 +75,30 @@ for patient_id in os.listdir(os.path.join(path,'HNSCC_clean_oropharynx_PTVs')):
 #     np.save(os.path.join(output_path,patient_id,"CT.npy"), imgs)
 
 # lets test it
-from dcmrtstruct2nii import dcmrtstruct2nii, list_rt_structs
+# from dcmrtstruct2nii import dcmrtstruct2nii, list_rt_structs
 
-strt_path = 'D:/NBIA_HNSCC_DATA/HNSCC_clean_oropharynx_PTVs/HNSCC-01-0001/HNSCC-01-0001_rtss.dcm'
-ct_path   = 'D:/NBIA_HNSCC_DATA/HNSCC_clean_oropharynx_PTVs/HNSCC-01-0001/'
-print(list_rt_structs(strt_path))
+# strt_path = 'D:/NBIA_HNSCC_DATA/HNSCC_clean_oropharynx_PTVs/HNSCC-01-0001/HNSCC-01-0001_rtss.dcm'
+# ct_path   = 'D:/NBIA_HNSCC_DATA/HNSCC_clean_oropharynx_PTVs/HNSCC-01-0001/'
+# print(list_rt_structs(strt_path))
 
-for patient_id in os.listdir('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean'):
-    print('patient_id:{}'.format(patient_id))
-    output_path = os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'mask')
-    os.mkdir(output_path)
+# for patient_id in os.listdir('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean'):
+#     print('patient_id:{}'.format(patient_id))
+#     output_path = os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'mask')
+#     os.mkdir(output_path)
 
-    dcmrtstruct2nii(os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'rtstruct',patient_id+'_rtss.dcm'),
-                    os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'dicom'),
-                    output_path)
+#     dcmrtstruct2nii(os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'rtstruct',patient_id+'_rtss.dcm'),
+#                     os.path.join('D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean',patient_id,'dicom'),
+#                     output_path)
+
+import nibabel as nib
+import matplotlib.pyplot as plt
+
+PTV = nib.load("D:\\NBIA_HNSCC_DATA\\HNSCC_Oropharynx_Clean\\HNSCC-01-0001\\mask\\mask_PTV-57.nii.gz")
+PTV[:,:,15]
+
+plt.figure
+plt.imshow(PTV[:,:,20])
+plt.show()
 
 
 
