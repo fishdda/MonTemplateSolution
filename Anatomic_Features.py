@@ -1,7 +1,3 @@
-# This Script used for analyze anatomy features to 
-# 1) calculate DTH to represent the Volume Overlap between target and OARs
-# 2) calculate the volume of each structure.
-# 3) Deep
 class Anatomy_Features:
 
     def __init__(self,rtss_path):
